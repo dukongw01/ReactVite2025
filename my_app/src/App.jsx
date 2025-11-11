@@ -6,8 +6,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // 이미지를 하나하나 import해서 개별로 가져올 수 있다.
 // public 폴더의 이미지 파일은 import하지 않아도 사용가능.
-import image01 from '../public/images/image01.png';
-import Alert from './propsComponents/Props06';
+// import image01 from '../public/images/image01.png';
+// import MovieList from '../StateUi/MovieApp/MovieList';
+
+// // 부모를 입력 blogc
+// import BlogC from '../stateComponents/Blog/blogc';
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import RecipData from '../src/Pages/Recipes/RecipData';
 
 function App(){
   
@@ -25,10 +31,11 @@ function App(){
         <p>{item.name}</p>
         <p>{item.price.toLocaleString()}</p>
       </div> */}
-      <Alert type={'error'} msg={'오류'}/>
+      {/* <Alert type={'error'} msg={'오류'}/>
       <Alert type={'sucess'} msg={'성공'}/>
       <Alert type={'info'} msg={'정보'}/>
-      <Alert type={'warring'} msg={'기타'}/>
+      <Alert type={'warring'} msg={'기타'}/> */}
+      <RecipData/>
     </>
   )
 }

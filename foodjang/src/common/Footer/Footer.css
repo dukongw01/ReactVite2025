@@ -1,0 +1,72 @@
+.FTcontainer{
+    width: 100%;
+    border-top: 4px solid #d3261a;
+}
+.FTcontainer>hr{
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+.FTcontainer .FTtop{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.FTcontainer .FTtop ul{
+    margin: 0;
+    padding: 10px 0 10px 0;
+    display: flex;
+    list-style: none;
+    font-size: 13px;
+    color: #757575;
+    gap: 25px;
+}
+
+.FTcontainer .FTbt{
+    width: 1100px;
+    height: 220px;
+    margin: 0 auto;
+    display: flex;
+}
+.FTcontainer .FTbt hr{
+    margin: 40px;
+    border: none;
+    border-left: 1px solid #e0e0e0;
+}
+
+.FTcontainer .FTbt .FTb01{
+    width: 200px;
+}
+.FTcontainer .FTbt .FTb01 h3{
+    margin: 30px 0 0 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.FTcontainer .FTbt .FTb01 h2{
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.FTcontainer .FTbt .FTb01 p{
+    margin: 0;
+    font-size: 12px;
+    color: #757575;
+}
+
+.FTcontainer .FTbt .FTb02{
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+
+.FTcontainer .FTbt .FTb02 p{
+    margin: 0;
+    font-size: 12px;
+    color: #757575;
+}
+.FTcontainer .FTbt .FTb02 p>span{
+    color: #555;
+}

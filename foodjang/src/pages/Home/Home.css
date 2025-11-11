@@ -1,0 +1,286 @@
+/* 박스 1 */
+.sectioncontainer{
+    margin: 0 auto;
+    padding: 0;
+}
+.section01{
+    margin: 0 auto;
+    width: 1100px;
+}
+.section01 h1{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+.section01 h1 a{
+    text-decoration: none;
+    color: #333;
+}
+.section01 ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section01 ul li{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.section01 ul li p{
+    color: #6d0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+.section01 ul li p span{
+    padding-left: 5px;
+    font-weight: normal;
+    color: #505050;
+}
+.section01 ul li .rubi{
+    padding: 0;
+    width: 150px;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.section01 ul li .ratetext{
+    font-weight: 500;
+    font-size: 15px;
+    color: #707070;
+}
+.section01 ul li .ratetext strong{
+    color: #b30000;
+}
+
+
+/* 박스 2 */
+.section02{
+    margin: 0 auto;
+    width: 1100px;
+}
+.section02 h1{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+.section02 h1 a{
+    text-decoration: none;
+    color: #333;
+}
+.section02 ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section02 ul li{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.section02 ul li p{
+    color: #6d0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+.section02 ul li p span{
+    padding-left: 5px;
+    font-weight: normal;
+    color: #505050;
+}
+.section02 ul li .rubi{
+    padding: 0;
+    width: 150px;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.section02 ul li .ratetext{
+    font-weight: 500;
+    font-size: 15px;
+    color: #707070;
+}
+.section02 ul li .ratetext strong{
+    color: #b30000;
+}
+
+/* 박스 3 */
+.section03{
+    margin: 0 auto;
+    width: 1100px;
+}
+.section03 h1{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+.section03 h1 a{
+    text-decoration: none;
+    color: #333;
+}
+.section03 ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section03 ul li{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.section03 ul li p{
+    color: #6d0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+.section03 ul li p span{
+    padding-left: 5px;
+    font-weight: normal;
+    color: #505050;
+}
+.section03 ul li .rubi{
+    padding: 0;
+    width: 150px;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.section03 ul li .ratetext{
+    font-weight: 500;
+    font-size: 15px;
+    color: #707070;
+}
+.section03 ul li .ratetext strong{
+    color: #b30000;
+}
+
+
+/* 박스 4 */
+.section04{
+    margin: 0 auto;
+    width: 1100px;
+}
+.section04 h1{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+.section04 h1 a{
+    text-decoration: none;
+    color: #333;
+}
+.section04 ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section04 ul li{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.section04 ul li p{
+    color: #6d0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+.section04 ul li p span{
+    padding-left: 5px;
+    font-weight: normal;
+    color: #505050;
+}
+.section04 ul li .rubi{
+    padding: 0;
+    width: 150px;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.section04 ul li .ratetext{
+    font-weight: 500;
+    font-size: 15px;
+    color: #707070;
+}
+.section04 ul li .ratetext strong{
+    color: #b30000;
+}
+
+
+/* 박스 5 */
+.section05{
+    margin: 0 auto;
+    width: 1100px;
+}
+.section05 h1{
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+.section05 h1 a{
+    text-decoration: none;
+    color: #333;
+}
+.section05 ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.section05 ul li{
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.section05 ul li p{
+    color: #6d0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+.section05 ul li p span{
+    padding-left: 5px;
+    font-weight: normal;
+    color: #505050;
+}
+.section05 ul li .rubi{
+    padding: 0;
+    width: 150px;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.section05 ul li .ratetext{
+    font-weight: 500;
+    font-size: 15px;
+    color: #707070;
+}
+.section05 ul li .ratetext strong{
+    color: #b30000;
+}
