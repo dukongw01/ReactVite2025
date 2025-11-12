@@ -3,7 +3,23 @@
     margin:0 auto;
     padding: 20px;
 }
-.section-container .list01{}
+
+.section-container .buttonbox{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+.section-container .buttonbox button{
+    margin: 10px;
+    padding: 0;
+    width: 100px;
+    height: 40px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 50px;
+    color: #eeee;
+}
 
 .section-container h1{
     margin-top: 50px;
@@ -18,27 +34,41 @@
 .section-container img{
     border-radius: 10px;
 }
-.list01 ul{
+.section-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.section-container ul li img{
+    margin-top: 50px;
+}
+
+.section-container .listbox .list01 ul{
     display: flex;
     list-style: none;
     gap: 15px;
 }
-.list02 ul{
+.section-container .listbox .list02 ul{
     display: flex;
     list-style: none;
     gap: 15px;
 }
-.list03 ul{
+ .list03 ul{
     display: flex;
     list-style: none;
     gap: 15px;
 }
-.list04 ul{
+.section-container .listbox .list04 ul{
     display: flex;
     list-style: none;
     gap: 15px;
 }
-.list05 ul{
+.section-container .listbox .list05 ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+.section-container .listbox .list06 ul{
     display: flex;
     list-style: none;
     gap: 15px;

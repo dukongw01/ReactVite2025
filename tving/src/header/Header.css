@@ -48,13 +48,18 @@
     color: #cccc;
     border-bottom: 2px solid #cccc;
 }
+.header-container .top-box .tbox02 li a{
+    text-decoration: none;
+    color: #cccc;
+    font-size: 13px;
+}
 
-.header-container .top-box .tbox02 li img{
+/* .header-container .top-box .tbox02 li img{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     outline: 1px solid #eeee;
-}
+} */
 
 .header-container .centerbox{
     margin: 0 auto;
@@ -71,7 +76,7 @@
     border-radius: 20px;
 }
 
-.header-container .bottombox{
+/* .header-container .bottombox{
     margin: 0 auto;
     width: 1800px;
     display: flex;
@@ -91,4 +96,4 @@
     text-decoration: none;
     font-size: 18px;
     color: #cccc;
-}
+} */

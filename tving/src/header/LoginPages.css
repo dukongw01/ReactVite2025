@@ -1,0 +1,43 @@
+.logcontainer{
+    margin: 100px auto;
+    width: 1600px;
+    height: 700px;
+}
+
+.logcontainer h1{
+    margin:0;
+    padding: 0;
+    font-size: 26px;
+    text-align: center;
+    color: white;
+}
+
+.logcontainer button{
+    margin: 15px auto;
+    display: flex;
+    width: 500px;
+    height: 55px;
+    border-radius: 10px;
+    border: none;
+    outline: 1px solid #888;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    background-color: transparent;
+}
+.logcontainer button p{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logcontainer p{
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+.logcontainer p span{
+    padding: 10px;
+    text-decoration: underline;
+    color: #999;
+}

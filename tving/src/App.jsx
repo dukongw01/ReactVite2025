@@ -7,16 +7,23 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './header/Header';
 import Section from './section/Section';
 import Footer from './footer/Footer';
+import LoginPages from './header/LoginPages';
 
 
 function App() {
 
   return (
-    <>
-      <Header/>
-      <Section/>
-      <Footer/>
-    </>
+    // <>
+      
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+            <Route path='/' element={<Section/>}/>
+            <Route path='/LoginPages' element={<LoginPages/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+    // {/* </> */}
   )
 }
 
