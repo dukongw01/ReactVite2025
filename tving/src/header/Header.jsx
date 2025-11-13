@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LoginPages from "./LoginPages";
 import Section from "../section/Section";
+import DramaTap from "./DramaTap";
+import MovieTap from "./MovieTap";
 
 import './Header.css';
 
@@ -13,9 +15,9 @@ export default function Header(){
                 <div className="top-box">
                     <ul className="tbox01">
                         <li><Link to='/'><img src="img/1695032536_1.svg" alt="tving logo" /></Link></li>
-                        <li><Link to='/Section'>드라마</Link></li>
-                        <li><Link to='/'>예능</Link></li>
-                        <li><Link to='/'>영화</Link></li>
+                        <li><Link to='/DramaTap'>드라마</Link></li>
+                        <li><Link to='/Comedy'>예능</Link></li>
+                        <li><Link to='/MovieTap'>영화</Link></li>
                         <li><Link to='/'>스포츠</Link></li>
                         <li><Link to='/'>애니</Link></li>
                         <li><Link to='/'>뉴스</Link></li>
@@ -25,9 +27,6 @@ export default function Header(){
                         <li><Link to='/LoginPages'>로그인</Link></li>
                         {/* <li><img src="img/vpace.jpg" alt="" /></li> */}
                     </ul>
-                </div>
-                <div className="centerbox">
-                    <img src="img/6u5x4l6u5x4l6u5x.png" alt="poster" />
                 </div>
                 {/* <div className="bottombox">
                         <TopMenu/>

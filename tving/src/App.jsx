@@ -8,6 +8,9 @@ import Header from './header/Header';
 import Section from './section/Section';
 import Footer from './footer/Footer';
 import LoginPages from './header/LoginPages';
+import DramaTap from './header/DramaTap';
+import MovieTap from './header/MovieTap';
+import Comedy from './header/Comedy';
 
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
         <Header/>
         <Routes>
             <Route path='/' element={<Section/>}/>
+            <Route path='/DramaTap' element={<DramaTap/>}/>
+            <Route path='/Comedy' element={<Comedy/>}/>
+            <Route path='/MovieTap' element={<MovieTap/>}/>
             <Route path='/LoginPages' element={<LoginPages/>}/>
         </Routes>
         <Footer/>

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './section.css';
-
+import DramaTap from "../header/DramaTap";
+import MovieTap from "../header/MovieTap";
 
 export default function Section(){
 
@@ -69,6 +70,9 @@ export default function Section(){
 
     return (
             <div className="section-container">
+                <div className="centerbox">
+                    <img src="img/6u5x4l6u5x4l6u5x.png" alt="poster" />
+                </div>
                 <div className="buttonbox">
                     <button type="button" onClick={()=>ClickHandle(1)}>드라마</button>
                     <button type="button" onClick={()=>ClickHandle(2)}>스릴러</button>
@@ -169,8 +173,7 @@ export default function Section(){
                                 </li>
                             )).slice(0,40)}
                         </ul>
-                 )}    
+                 )} 
             </div>
     )
-   
 }
