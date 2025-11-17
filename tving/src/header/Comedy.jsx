@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import comedying from '../../img/1yrv8z1yrv8z1yrv.png'
 
 
 export default function Comedy(){
@@ -20,6 +21,8 @@ export default function Comedy(){
     return(
         <>
             <div className="list01">
+                <img src={comedying} alt="drning" 
+                    style={{width:'1400px', height:'450px', margin:'0 auto', borderRadius:'20px', display:'flex'}} />
                         <h1>예능</h1>
                         <ul>
                             {Comedyfilter.map((item,index)=>(

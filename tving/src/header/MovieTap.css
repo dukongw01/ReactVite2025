@@ -22,3 +22,10 @@ ul li img{
     list-style: none;
     gap: 15px;
 }
+
+.list01 ul li img{
+    transform: translateY(0);
+}
+.list01 ul li img:hover{
+    transform: translateY(-5px);
+}

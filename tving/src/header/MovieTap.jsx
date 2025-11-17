@@ -1,5 +1,7 @@
 import { useState, useEffect} from "react";
 import './MovieTap.css';
+import movieing from '../../img/ijykzdijykzdijyk.png'
+
 
 export default function MovieTap(){
 
@@ -26,6 +28,8 @@ export default function MovieTap(){
     return(
         <>
             <div className="list01">
+                <img src={movieing} alt="drning" 
+                    style={{width:'1400px', height:'450px', margin:'0 auto', borderRadius:'20px', display:'flex'}} />
                 <h1>영화</h1>
                 <ul>
                     { (runlist !== null && runlist.length > 0)? runlist.filter((item)=>item.runtime >= 90)

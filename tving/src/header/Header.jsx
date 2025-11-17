@@ -4,6 +4,10 @@ import LoginPages from "./LoginPages";
 import Section from "../section/Section";
 import DramaTap from "./DramaTap";
 import MovieTap from "./MovieTap";
+import herIMg from '../../img/1695032536_1.svg'
+import SportsTap from "./SportsTap";
+import AnimeTap from "./AnimeTap";
+import NewsTap from "./NewsTap";
 
 import './Header.css';
 
@@ -14,17 +18,17 @@ export default function Header(){
             <div className="header-container">
                 <div className="top-box">
                     <ul className="tbox01">
-                        <li><Link to='/'><img src="img/1695032536_1.svg" alt="tving logo" /></Link></li>
+                        <li><Link to='/'><img src={herIMg} alt="tving logo" /></Link></li>
                         <li><Link to='/DramaTap'>드라마</Link></li>
                         <li><Link to='/Comedy'>예능</Link></li>
                         <li><Link to='/MovieTap'>영화</Link></li>
-                        <li><Link to='/'>스포츠</Link></li>
-                        <li><Link to='/'>애니</Link></li>
-                        <li><Link to='/'>뉴스</Link></li>
+                        <li><Link to='/SportsTap'>스포츠</Link></li>
+                        <li><Link to='/AnimeTap'>애니</Link></li>
+                        <li><Link to='/NewsTap'>뉴스</Link></li>
                     </ul>
                     <ul className="tbox02">
-                        <li><input type="text" placeholder="작품명을 입력하세요."/>🔍</li>
-                        <li><Link to='/LoginPages'>로그인</Link></li>
+                        <li><input type="text" placeholder="작품명을 입력하세요."/><p>🔍</p></li>
+                        <li><Link to='/LoginPages'>로그인 </Link></li>
                         {/* <li><img src="img/vpace.jpg" alt="" /></li> */}
                     </ul>
                 </div>
