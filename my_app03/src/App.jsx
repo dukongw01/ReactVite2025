@@ -5,18 +5,23 @@ import './App.css'
 // import Counter from './ReduxEx/counter'
 // import Counter from './ReduxToolkit/counter'
 // import Cart from './cartEx/Cart'
-import Test from './test'
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
-import Header from './components/Header';
-import Section from './pages/Section'
-import Footer from './components/Footer'
+// import Test from './test'
+// import { BrowserRouter, Route, Routes} from 'react-router-dom'
+// import Header from './components/Header';
+// import Section from './pages/Section'
+// import Footer from './components/Footer'
+import { CookieTest } from './components/Cookie';
+import { LoginCookieTest } from './components/LoginCookie';
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <LoginCookieTest/>
+      {/* <CookieTest/> */}
+
+      {/* <BrowserRouter>
           <Header>
       <Routes>
         <Route>
@@ -25,7 +30,7 @@ function App() {
         </Route>
       </Routes>
           </Header>
-      </BrowserRouter>
+      </BrowserRouter> */}
       {/* <Cart/> */}
     </>
   )
