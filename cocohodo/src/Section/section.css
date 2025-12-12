@@ -1,0 +1,29 @@
+.section-container{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.section-container .top-title{
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;    
+}
+
+.section-container .page-tap{
+    width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #ffffaa;
+}
+
+.section-container .page-tap ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgrey;
+}
+

@@ -1,0 +1,30 @@
+.page-container{
+    margin: 0 auto;
+    padding: 0;
+    width: 1400px;
+    background-color: lightpink;
+}
+
+.page-container .list-box ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.page-container .list-box ul li{
+    margin: 0 0 20px;
+    padding: 0 10px;
+    background-color: lightcyan
+}
+.page-container .list-box ul li img{
+    border-radius: 20px 20px 0 0;
+}
+
+.page-container .list-box button{
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 25px;
+    background-color: aqua;
+}

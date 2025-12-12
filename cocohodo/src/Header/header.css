@@ -1,0 +1,28 @@
+.header-container{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header-container .top-box{
+    margin: 0 auto;
+    width: 1400px;
+    background-color: #ffeeda;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.header-container .top-box .taps ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.header-container .top-box .my-page ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}

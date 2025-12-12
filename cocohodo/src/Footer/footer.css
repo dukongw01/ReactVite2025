@@ -1,0 +1,15 @@
+.footer-container{
+    margin: 0 auto;
+    /* padding: 0; */
+    padding: 30px;
+    background-color: #f6ffd4;
+}
+/* #6b1a1a 코코호도 로고 헥스 코드 */
+.footer-container .info ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
