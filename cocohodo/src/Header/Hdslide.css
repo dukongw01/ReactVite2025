@@ -2,7 +2,6 @@
     margin: 0 auto;
     padding: 0;
     width: 1600px;
-    background-color: red;
 }
 
 .topSlide .slide-navi {
@@ -71,18 +70,19 @@
     padding: 0;
     width: 15px;
     height: 15px;
-    display: none;
-    color: white;
+    filter: invert(50%);
+    opacity: 50%;
 }
 
-.topSlide .slide-navi .btn-bar #slide-clove img .active{
-    display: block;
+.topSlide .slide-navi .btn-bar #slide-clove.active img{
+    filter: invert(0);
+    opacity: 100%;
 }
 
 .topSlide .slide-navi .btn-size{
     position: absolute;
-    left: 45.5%;
-    bottom: 3.4%;
+    left: 45.7%;
+    bottom: 3.6%;
     margin: 0;
     padding: 0;
     width: 35px;

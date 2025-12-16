@@ -34,8 +34,8 @@ export default function Footer(){
                     </li>
                     <li>
                         <h4>Resources</h4>
-                        <Link to='/'>개인정보처리방침</Link>
-                        <Link to='/'>이용약관</Link>
+                        <p><Link to='/'>개인정보처리방침</Link></p>
+                        <p><Link to='/'>이용약관</Link></p>
                     </li>
                     <li>
                         <h4>고객상담센터 · 가맹문의</h4>

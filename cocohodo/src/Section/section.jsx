@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Page from "./page";
 import './section.css';
 
-export default function Section(){
+export default function Section({datalist}){
 
     // console.log("여기까지 읽었어")
     // for(let i=0;i<props.Hodo.length; i++){
@@ -33,6 +33,7 @@ export default function Section(){
             </div>
             <div className="page-tap">
                 <ul>
+                    <li><Link to='/'>전체</Link></li>
                     <li><Link to='/'>BEST</Link></li>
                     <li><Link to='/'>선물용</Link></li>
                     <li><Link to='/'>답례용</Link></li>
@@ -44,7 +45,7 @@ export default function Section(){
                 {/* 페이지 버튼 자리 */}
             </div>
             <div className="hodopage">
-                <Page/>
+                <Page  datalist02={datalist}/>
             </div>
             <div className="page-num">
                 <p> 1 2 3 </p>

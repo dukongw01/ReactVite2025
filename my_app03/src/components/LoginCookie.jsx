@@ -11,6 +11,10 @@ export function LoginCookieTest(){
     const saveId = LoginCookie.get('userId')
     const [idChk, setIdChk]=useState(saveId?true:false);
 
+    // 쿠키가 존재하면 화면에서 사라짐
+    const [showlog, setShowLog]=useState(saveId?true:false);
+    console.log(showlog);
+
     // 아이디 저장 체크박스 핸들러
     const idChkHandler = (e) => {
         setIdChk(e.target.checked);
@@ -39,6 +43,7 @@ export function LoginCookieTest(){
 
     return(
         <div>
+            {showlog}
             <h1>LOGIN PAGE</h1>
             <fieldset>
                 <form onSubmit={logHandler}>

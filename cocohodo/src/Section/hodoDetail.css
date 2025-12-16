@@ -1,0 +1,110 @@
+.detail-container{
+    margin: 0 auto;
+    padding: 0;
+    width: 1500px;
+}
+
+.detail-container .sub-container{
+    display: flex;
+}
+.detail-container .left-box{
+    margin: 0;
+    padding: 0;
+}
+
+.detail-container .sub-container .left-box .tab-top{}
+
+.detail-container .sub-container .left-box .tab-top ul{
+    display: flex;
+    list-style: none;
+}
+.detail-container .sub-container .left-box .tab-top{}
+.detail-container .sub-container .left-box .tab-top .bic-img{}
+.detail-container .sub-container .left-box .tab-top .bic-img .imgboxbic{
+    display: block;
+    width: 600px;
+    height: 600px;
+    background-color: #b1dfdf;
+}
+.detail-container .sub-container .left-box .tab-top .bic-img ul{
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+.detail-container .sub-container .left-box .tab-top .bic-img ul li .imgboxsmall{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #e7c6c6;
+}
+
+.detail-container .sub-container .right-box{
+    margin: 30px 0 0 100px;
+    padding: 0;
+    width: 100%;
+    background-color: #c8aee0;
+}
+.detail-container .sub-container .right-box #buyput{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+}
+.detail-container .sub-container .right-box .side-title ul{
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.detail-container .sub-container .right-box .side-btn ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #cea2a2;
+}
+.detail-container .sub-container .right-box .side-btn ul li .sidebtn01{
+    margin: 0;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+}
+.detail-container .sub-container .right-box .side-btn ul li .sidebtn02{
+    margin: 0;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+}
+.detail-container .sub-container .right-box .side-btn ul li .sidebtn03{
+    margin: 0;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+}
+.detail-container .sub-container .right-box .side-btn ul li .sidebtn04{
+    margin: 0;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+}
+
+.detail-container .detail-imgbox{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+    height: 3000px;
+    background-color: bisque;
+}

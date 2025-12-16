@@ -27,7 +27,7 @@ export default function Header(){
                 </div>
                 <div className="my-page">
                     <ul>
-                        <li><input type="text" /><img src="./img/search-img.png" alt="" style={{height:'20px'}}/>검색</li>
+                        <li><input type="text" /><img src="./img/search-img.png" alt="" style={{height:'20px'}}/></li>
                         <li><Link to='/Login'>로그인</Link></li>
                         <li><Link to='/Cart'>장바구니</Link></li>
                     </ul>
