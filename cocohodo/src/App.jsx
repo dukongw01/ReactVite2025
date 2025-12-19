@@ -12,6 +12,7 @@ import HodoDetail from './Section/hodoDetail';
 function App() {
 // custom hook으로 hododata를 사용할 예정
   const data = Hododata();
+  
   return (
     <BrowserRouter>
       <Header/>

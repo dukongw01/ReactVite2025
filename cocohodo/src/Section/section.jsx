@@ -5,26 +5,24 @@ import './section.css';
 
 export default function Section({datalist}){
 
-    // console.log("여기까지 읽었어")
-    // for(let i=0;i<props.Hodo.length; i++){
-    //     console.log(props.Hodo[i].id)
-    // }
+    // 탭 메뉴 클릭시 hododata.jsx의 category 구분 필터 생성
+    const [tapfilter, setTapFilter]=useState('');
+    const [categorys, setCategorys]=useState([]);
 
-    // console.log("여기는 ...")
+    
+    useEffect(()=>{
+        fetch({datalist})
+        .then((res)=>{return res.datalist()})
+        .then((data)=>{setCategorys(data)
+            console.log('데이터')
+        })
+        .catch(()=>{})
+        .finally(()=>{})
+    },[])
+    
 
-    // 상품 카테고리 담는 수
-    const [category, setCategory]=useState('');
-    
-    const [hodolist, setHodoList]=useState([]);
-    
-    // useEffect(()=>{
-    //     fetch('hodolist.jsx')
-    //     .then((res)=>{ return res.category()})
-    //     .then((data)=>{ setHodoList(data)
-    //         console.log('데이터') })
-    //     .catch(()=>{})
-    //     .finally(()=>{})
-    // },[])
+    const nutsFilter = categorys.filter((item)=>item.category.includes('nuts'))
+
 
     return(
         <div className="section-container">
@@ -45,7 +43,7 @@ export default function Section({datalist}){
                 {/* 페이지 버튼 자리 */}
             </div>
             <div className="hodopage">
-                <Page  datalist02={datalist}/>
+                <Page datalist02={datalist}/>
             </div>
             <div className="page-num">
                 <p> 1 2 3 </p>
