@@ -11,7 +11,7 @@ export default function Header(){
         <div className="header-container">
             <div className="top-box">
                 <div className="logo01">
-                    <img src='./img/cocologotext.png' alt="cocologotext" style={{width:'150px'}}/>
+                    <Link to='/'><img src='./img/cocologotext.png' alt="cocologotext" style={{width:'150px'}}/></Link>
                 </div>
                 <div className="taps">
                     <ul>

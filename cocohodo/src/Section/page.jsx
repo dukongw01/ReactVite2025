@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './page.css';
 
 export default function Page({datalist02}){
-
+    // 섹션의 상품목록 페이지
     // 매장전용 또는 온라인구매 구분 버튼
     const buybtnfilter = datalist02.filter((item)=>item.buybtn === 0)
     const onbuybtnfilter = datalist02.filter((item)=>item.buybtn === 1)

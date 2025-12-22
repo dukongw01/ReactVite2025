@@ -1,7 +1,6 @@
 .detail-container{
     margin: 0 auto;
     padding: 0;
-    background-color: #faf4ef;
 }
 
 .detail-container .sub-container{
@@ -15,13 +14,25 @@
     padding: 0;
 }
 
-.detail-container .sub-container .left-box .tab-top{}
+.detail-container .sub-container .left-box .tab-top{
+    margin: 0;
+    padding: 0;
+}
 
 .detail-container .sub-container .left-box .tab-top ul{
+    margin: 50px 0 20px 0;
+    padding: 0px;
+    gap: 10px;
     display: flex;
     list-style: none;
+    color: #777;
 }
-.detail-container .sub-container .left-box .tab-top{}
+.detail-container .sub-container .left-box .tab-top ul li a{
+    margin: 0 10px 0 0;
+    color: #777;
+    text-decoration: none;
+}
+
 .detail-container .sub-container .left-box .tab-top .bic-img{}
 .detail-container .sub-container .left-box .tab-top .bic-img .imgboxbic{
     display: block;
@@ -51,19 +62,87 @@
     padding: 0;
     width: 100%;
 }
-.detail-container .sub-container .right-box #buyput{
-    margin: 20px 0 20px 0;
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
+.detail-container .sub-container .right-box h2{
+    margin: 50px 0 0 0;
+    padding: 0;
+    font-size: 25px;
 }
 .detail-container .sub-container .right-box .side-title ul{
     margin: 0 auto;
     padding: 0;
     display: flex;
     list-style: none;
+    align-items: center;
+    text-align: center;
     justify-content: space-between;
 }
+.detail-container .sub-container .right-box .side-title ul li img{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.detail-container .sub-container .right-box .side-title ul li p{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #222;
+}
+
+.detail-container .sub-container .right-box p{
+    margin: 5px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+}
+.detail-container .sub-container .right-box hr{
+    margin: 20px 0 20px 0;
+    border: none;
+    border-bottom: 1px solid #cccc;
+    outline: none;
+}
+.detail-container .sub-container .right-box p span{
+    font-weight: lighter;
+    color: #777;
+}
+.detail-container .sub-container .right-box h4{
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.detail-container .sub-container .right-box #buyput{
+    margin: 0 0 30px 0;
+    padding: 5px;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+}
+.detail-container .sub-container .right-box .count-box{
+    margin: 0 0 40px 0;
+    padding: 0;
+    display: flex;
+    background-color: #5ddf5d;
+}
+
+.detail-container .sub-container .right-box .count-box button{
+    width: 25px;
+    height: 35px;
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    border: 1px solid #999;
+}
+.detail-container .sub-container .right-box .count-box p{
+    margin: 0;
+    padding: 0 20px 0 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    color: #222;
+    background-color: white;
+    border: 1px solid #999;
+}
+
 .detail-container .sub-container .right-box .side-btn ul{
     margin: 0;
     padding: 0;
@@ -78,7 +157,7 @@
     padding: 0 10px 0 10px;
     font-weight: bold;
     width: 450px;
-    height: 40px;
+    height: 45px;
     border: none;
     border-radius: 25px;
     background-color: #5ddf5d;
@@ -89,7 +168,7 @@
     font-weight: bold;
     color: #61182a;
     width: 180px;
-    height: 40px;
+    height: 45px;
     border: none;
     border-radius: 25px;
     background-color: #f5f5f5;
@@ -99,29 +178,28 @@
     margin: 0;
     padding: 0 10px 0 10px;
     font-weight: bold;
-    color: white;
+    color: #61182a;
     width: 150px;
-    height: 40px;
+    height: 45px;
     border: none;
     border-radius: 25px;
-    background-color: #a52e4c;
+    background-color: #ffd86d;
 }
 .detail-container .sub-container .right-box .side-btn ul li .sidebtn04{
     margin: 0;
     padding: 0 10px 0 10px;
     font-weight: bold;
-    color: #61182a;
+    color: white;
     width: 800px;
-    height: 40px;
+    height: 45px;
     border: none;
     border-radius: 25px;
-    background-color: #ffd86d;
+    background-color: #a52e4c;
 }
 
 .detail-container .detail-imgbox{
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 100px 0 100px 0;
     padding: 0;
-    width: 1400px;
-    height: 3000px;
+    display: flex;
+    justify-content: center;
 }
