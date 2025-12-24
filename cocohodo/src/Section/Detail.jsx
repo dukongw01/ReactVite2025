@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './hodoDetail.css';
+import './Detail.css';
 import { useParams } from "react-router-dom";
-import HodoCart from "./hodoCart";
+import Cart from "./Cart";
 import linkimg from "../../public/img/linkimg.png";
 
-export default function HodoDetail({datalist}){
+export default function Detail({datalist}){
     // 상세 페이지
     // app.jsx에  <Route path='/:id' element={<HodoDetail datalist={data}/>}/> 에서 id를 useParams() hook으로 받아오기
     const {id} = useParams();
@@ -17,6 +17,12 @@ export default function HodoDetail({datalist}){
     const [count, setCount] = useState(1);
     const plus = () => setCount(count+1);
     const minus = () => { if (count > 1) setCount(count-1);}
+    
+
+    // 찜 기능
+    const [likes, setLikes] = useState(false);
+    const likeblack = ()=> setLikes('♥');
+
 
     return(
         <div className="detail-container">
@@ -58,21 +64,24 @@ export default function HodoDetail({datalist}){
                     </div>
                     <hr/>
                     <h3>상품관련 안내사항</h3>
-                    <p>배송방법 <span>택배</span></p>
-                    <p>배송비 <span>3,000원(3만원 이상 무료배송) | 도서산간 배송비 추가</span></p>
-                    <p>배송안내 <span>오전 11시 이전 주문 시 당일 출고 / CJ대한통운 (신선택배) / 출고 후 1~2일 소요 / 주말 및 공휴일 휴무</span></p>
+                    <p><strong>배송방법</strong> <span>택배</span></p>
+                    <p><strong>배송비</strong> <span>3,000원(3만원 이상 무료배송) | 도서산간 배송비 추가</span></p>
+                    <p><strong>배송안내</strong> <span>오전 11시 이전 주문 시 당일 출고 / CJ대한통운 (신선택배) / 출고 후 1~2일 소요 / 주말 및 공휴일 휴무</span></p>
                     <hr/>
-                    <h4>수량*</h4>
+                    <h4>상품선택*</h4>
                     <select name="buyput" id="buyput">
-                        <option value="" >수량필수</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="1" disabled>상품선택</option>
+                        <option value="2">{findId.name}</option>
+                        <option value="3">{findId.name}1box</option>
                     </select>
                     <div className="count-box">
                         <button type="button" onClick={minus}>-</button>
                         <p>{count}</p>
                         <button type="button" onClick={plus}>+</button>
+                    </div>
+                    <div className="total-price">
+                            <p><span>총 상품 금액: </span>
+                            <strong>{(findId.price * count).toLocaleString('ko')}원</strong></p>
                     </div>
                     <div className="side-btn">
                         <ul>
@@ -80,10 +89,10 @@ export default function HodoDetail({datalist}){
                                 <button type="button" className="sidebtn01">네이버페이</button>
                             </li>
                             <li>
-                                <button type="button" className="sidebtn02"><Link to={HodoCart}></Link>장바구니</button>
+                                <button type="button" className="sidebtn02" onClick={()=>navigator('HodoCart')}> <Link to='/HodoCart'>장바구니</Link></button>
                             </li>
                             <li>
-                                <button type="button" className="sidebtn03">♡ 찜하기</button>
+                                <button type="button" className="sidebtn03" onClick={likeblack}> {likes !== false? `${likes} 찜하기`: "♡ 찜하기"}</button>
                             </li>
                             <li>
                                 <button type="button" className="sidebtn04">구매하기</button>
@@ -91,7 +100,7 @@ export default function HodoDetail({datalist}){
                         </ul>
                     </div>
                 </div>
-
+        
             </div>
             <div className="detail-imgbox">
                 <img src={`img/${findId.scrollimg}`} alt={findId.scrollimg} />

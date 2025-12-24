@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './header.css';
-import HdSilde from "./Hdslide";
 
 
 export default function Header(){
@@ -33,7 +32,6 @@ export default function Header(){
                     </ul>
                 </div>
             </div>
-            <HdSilde/>
         </div>
     )
 }

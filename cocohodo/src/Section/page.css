@@ -19,6 +19,7 @@
     border-radius: 20px;
     height: 410px;
     background-color: white;
+    position: relative;
 }
 .page-container .list-box ul li a{
     text-decoration: none;
@@ -44,6 +45,24 @@
     padding: 15px 0 0 30px;
     font-size: 24px;
     color: #555;
+}
+.page-container .list-box ul li .btncart{ /* <----- 장바구니 버튼*/
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+.page-container .list-box ul li .btncart .qkrnsl{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+}
+
+.page-container .list-box ul li .btncart .qkrnsl h1{
+    margin: 0;
+    padding: 0;
+    color: #61182a;
+    cursor: pointer;
 }
 
 .page-container .list-box ul li .pribuy {

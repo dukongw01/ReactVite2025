@@ -76,8 +76,8 @@ export default function HdSilde(){
                     <ul>
                         {/* // handleClick 실행 */}
                             {slideItem.map((item, index) => (
-                                <li>
-                                <button id="slide-clove" key={item.id}
+                                <li key={item.id}>
+                                <button id="slide-clove" 
                                     type="button" onClick={() => handleClick(index)}
                                     // slideCr 현재 인덱스와 index가 같으면 'active' 부여
                                     className={index === slideCr ? 'active' : ''}

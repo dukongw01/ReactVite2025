@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Page from "./page";
 import './section.css';
+import HdSilde from "../Header/Hdslide";
 
 export default function Section({datalist}){
 
@@ -26,8 +27,8 @@ export default function Section({datalist}){
 
     return(
         <div className="section-container">
+            <HdSilde/>
             <div className="top-title">
-                <h1>온라인 몰{/*바뀌는 글씨 자리*/}</h1>
             </div>
             <div className="page-tap">
                 <ul>
@@ -40,14 +41,14 @@ export default function Section({datalist}){
                     <li><Link to='/'>단체/간식용</Link></li>
                     <li><Link to='/'>견과류</Link></li>
                 </ul>
-                {/* 페이지 버튼 자리 */}
             </div>
             <div className="hodopage">
                 <Page datalist02={datalist}/>
             </div>
-            <div className="page-num">
+                {/* 페이지 버튼 자리 */}
+            {/* <div className="page-num">
                 <p> 1 2 3 </p>
-            </div>
+            </div> */}
         </div>
     )
 }
