@@ -38,6 +38,5 @@ export default function Hododata(){
         {id:27, name:'코코 스페셜(대)', title:'cocosnack_33.jpg', title2:'cocosnack_34.jpg', scrollimg:'small_31.jpg', price:41000, category:'present', buybtn:1 },
     ]
 
- 
     return Hodo
 }

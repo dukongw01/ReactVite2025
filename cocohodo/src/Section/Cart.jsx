@@ -51,13 +51,13 @@ export default function Cart({datalist}){
                                         </div>
                                         {cartlist.length > 0 && ( <button onClick={clearcart}>삭제</button> ) } {/* 삭제 버튼 */}
                                     </td> {/* 수량 */}
-                                    <td className="rmador"><p>{item.price.toLocaleString('ko')}원</p></td> {/* 주문금액 */}
-                                    <td className="qothd" rowspan><p>배송비:<span></span></p></td>
+                                    <td className="rmador"><p>원</p></td> {/* 주문금액 */}
+                                    <td className="qothd" ><p>배송비:<span></span></p></td>
                                 </tr>
                             )}
                 </table>
                 <div className="table-btm">
-                    <p><span>총 상품 금액: </span><strong>원</strong></p>
+                    <p><span>총 상품 금액: </span>.toLocaleString('ko')<strong>원</strong></p>
                     <button type="button">선택 상품주문</button>
                 </div>
             </div>
