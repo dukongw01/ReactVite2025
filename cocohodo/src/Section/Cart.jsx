@@ -11,24 +11,72 @@ export default function Cart({datalist}){
             console.log("cart자료",saved);
         });
 
+    const [total, setTotal] = useState(0);   
+
+      // cart가 바뀔때마다 localStorage에 저장
+    useEffect(()=>{
+        localStorage.setItem('cartlist', JSON.stringify(cartlist));
+    },[cartlist]);    
+
     // 장바구니 목록 삭제
     const clearcart = () => {
         setCartlist([]); //상태 초기화
         localStorage.removeItem('cartlist');
     };
+    
     // 합계
     //const totalcart = cart.reduce((item)=>(item.price),0);
+    const cartlistCopy = [...cartlist]
+    const plus = (id) => {
+        
+        const findplus = cartlistCopy.find((cartItem) => cartItem.id === id)
+        console.log("장바구니 수량 증가")
+        console.log(findplus);
+        if(findplus !== undefined){
+            findplus.count += 1;
+            setCartlist(cartlistCopy)
+        }
+    }
 
-    const [count, setCount] = useState(1);
-    const plus = () => setCount(count+1);
-    const minus = () => { if (count > 1) setCount(count-1);}
+    const minus = (id) => {
+      //  const cartlistCopy = [...cartlist]
+        const findminus = cartlistCopy.find((cartItem) => cartItem.id === id)
+        console.log("장바구니 수량 감소")
+        console.log(findminus);
+        if(findminus !== undefined && findminus.count >1 ){
+            findminus.count = findminus.count -1;
+            // findminus.count -= 1
+            setCartlist(cartlistCopy)
+        }
+    }
+
+    const delbtn = (id) => {
+     //   const cartlistCopy = [...cartlist]
+        const delindex = cartlistCopy.findIndex((cartItem) => cartItem.id === id)
+        if(delindex !== -1){
+            cartlistCopy.splice(delindex,1)
+            setCartlist(cartlistCopy)
+        }
+    }
+
+    // 가격 총 합계
+    useEffect(()=>{
+        let totaltemp=0;
+        for(let i=0; i<cartlist.length; i++){
+            totaltemp += cartlist[i].price * cartlist[i].count;
+        }
+        setTotal(totaltemp);
+    },[cartlist])
 
 
     return(
         <div className="cart-container">
             <div className="table-box">
-                <table> {/* 장바구니 테이블 */}
+                {/* 장바구니  */}
+                <table>
+                    
                     <caption><input type="checkbox" />장바구니 <p>총 상품:</p></caption>
+                    <tbody>
                         <tr>
                             <th className="big-th">상품 정보</th>
                             <th className="small-th">수량</th>
@@ -37,27 +85,28 @@ export default function Cart({datalist}){
                         </tr>
                         {/* 상품정보 */}
                             {cartlist.map((item)=>
-                               <tr>
-                                    <td key={item.id} className="table-center-title">
+                               <tr key={item.id}>
+                                    <td  className="table-center-title">
                                         <input type="checkbox" />
                                         <img src={`/img/${item.title}`} alt={item.name}/>
                                         <p>{item.name}</p>
                                     </td>
                                     <td>
                                         <div className="table-btnbox">
-                                            <button type="button" onClick={minus}>-</button>
-                                            <p>{count}</p>
-                                            <button type="button" onClick={plus}>+</button>
+                                            <button type="button" onClick={()=>minus(item.id)}>-</button>
+                                            <p>{item.count}</p>
+                                            <button type="button" onClick={()=>plus(item.id)}>+</button>
                                         </div>
-                                        {cartlist.length > 0 && ( <button onClick={clearcart}>삭제</button> ) } {/* 삭제 버튼 */}
-                                    </td> {/* 수량 */}
-                                    <td className="rmador"><p>원</p></td> {/* 주문금액 */}
-                                    <td className="qothd" ><p>배송비:<span></span></p></td>
+                                        <button onClick={()=>delbtn(item.id)}>삭제</button>
+                                    </td>
+                                    <td className="rmador"><p>{item.price.toLocaleString("ko")}원</p></td>
+                                    <td className="qothd" ><p>배송비:<span>{item.price >= 10000 ? 0:3000}원</span></p></td>
                                 </tr>
                             )}
+                    </tbody>
                 </table>
                 <div className="table-btm">
-                    <p><span>총 상품 금액: </span>.toLocaleString('ko')<strong>원</strong></p>
+                    <p><span>총 상품 금액: </span>{total}<strong>원</strong></p>
                     <button type="button">선택 상품주문</button>
                 </div>
             </div>

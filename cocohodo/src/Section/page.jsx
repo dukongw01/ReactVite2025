@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './page.css';
 
-export default function Page({datalist02, clickHandle}){
+export default function Page({datalist02, tapfilter}){
 
       const [cartlist, setCartlist] = useState(()=>{
             const saved = localStorage.getItem('cartlist');
@@ -20,131 +20,44 @@ export default function Page({datalist02, clickHandle}){
         // 배열은 반드시 얕은 복사
         // 얕은 복사를 하지 않으면 그림을 못 그린다.
         const cartlistCopy = [...cartlist]
-        cartlistCopy.push(item)
+        const findItem = cartlist.find((cartItem) => cartItem.id === item.id)
+        // find 결과가 존재할때 아래처럼 출력
+        // {id: 2, name: "간식용 캐슈넛", title: "cashewnut_1.jpg", title2: "cashewnut_2.png", scrollimg: "small_1.jpg",…}
+        // find 결과가 존재하지 않으면 undefined
+        // findItem === undefined의 의미는 장바구니에 같은 상품이 없다는 뜻
+        if(findItem === undefined){
+            cartlistCopy.push({...item, count:1});
+            alert(`${item.name} 장바구니에 담김`)
+        }else{
+            //같은 상품ㅇㅣ 이미 존재 할때
+            alert(`${item.name}상품이 존재합니다.`)
+            findItem.count += 1;
+        }
         setCartlist(cartlistCopy)
-        alert(`${item} 장바구니에 담김`)
+        
     }
 
-    // 섹션의 상품목록 페이지
-    // 매장전용 또는 온라인구매 구분 버튼
-    const buybtnfilter = datalist02.filter((item)=>item.buybtn === 0)
-    const onbuybtnfilter = datalist02.filter((item)=>item.buybtn === 1)
+     // tapfilter.length === 0 면 datalist02로 그림을 그려라 아니면 findItemFilter로 그려라
+    //const findItemFilter = tapfilter.length === 0 ? datalist02 : datalist02.filter((item)=>item.category === tapfilter);
+    const findItemFilter = datalist02.filter((item)=>item.category === tapfilter);
+    const dataTap = tapfilter.length === 0 ? datalist02 : findItemFilter;
+    // dataTap에 있는 tapfilter가 0 이면 datalist02의 정보를 가져오고 아니면 findItemFilter의 값을 가져온다.
+    // findItemFilter엔 datalist02 정보 값이 item, category필터가 이미 적용돼서 tapfilter에 들어있음.
+    // 그런데 이 방식은 2줄로 너무 길어짐, 좀 더 축약할 수 있는 방식이
+    //const findItemFilter = tapfilter.length === 0 ? datalist02 : datalist02.filter((item)=>item.category === tapfilter);
 
-    // 탭 메뉴 클릭시 category 구분 필터 생성
-    const [tapfilter, setTapFilter]=useState('');
-    const [categorys, setCategorys]=useState([]);
 
     
     useEffect(()=>{
-        fetch({datalist02})
-        .then((res)=>{return res.datalist()})
-        .then((data)=>{setCategorys(data)
-            console.log('데이터')
-        })
-        .catch(()=>{})
-        .finally(()=>{})
-    },[])
-    
-
-    const nutsFilter = categorys.filter((item)=>item.category.includes('nuts'))
-    const snackFilter = categorys.filter((item)=>item.category.includes('snack'))
-    const creamFilter = categorys.filter((item)=>item.category.includes('cream'))
-    const butterFilter = categorys.filter((item)=>item.category.includes('butter'))
-    const giftFilter = categorys.filter((item)=>item.category.includes('gift'))
-    const presentFilter = categorys.filter((item)=>item.category.includes('present'))
-
-    // const clickHandle = (num) => {
-    //     if(num === 1){
-    //         setTapFilter('nuts')
-    //     }else if(num === 2){
-    //         setTapFilter('snack')
-    //     }else if(num === 3){
-    //         setTapFilter('cream')
-    //     }else if(num === 4){
-    //         setTapFilter('butter')
-    //     }else if(num === 5){
-    //         setTapFilter('gift')
-    //     }else{
-    //         setTapFilter('present')
-    //     }
-    // }
+        console.log(tapfilter)
+        console.log(findItemFilter)
+    },[tapfilter])
     
     return(
         <div className="page-container">
             <div className="list-box">
-                {
-                    tapfilter === '' ?
-                
-                (<div className="listbox">
-                        <ul>
-                            {nutsFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    <div className="list02">
-                        <ul>
-                            {snackFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="list03">
-                        <ul>
-                            {creamFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="list04">
-                        <ul>
-                            {butterFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="list05">
-                        <ul>
-                            {giftFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="list06">
-                        <ul>
-                            {presentFilter.map((item,index)=>(
-                                <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>):(
-                    <ul>
-                            {(categorys === 'nuts' ? nutsFilter : 
-                            categorys === 'snack' ? snackFilter :
-                            categorys === 'cream' ? creamFilter :
-                            categorys === 'butter' ? butterFilter :
-                            categorys === 'gift' ? giftFilter :
-                            categorys === 'present' ? presentFilter :
-                            categorys ).map((item,index)=>(
-                                 <li key={index}>
-                                    <img src={`/img/${item.title}`} alt={item.name}/>
-                                </li>
-                            ))}
-                        </ul>
-                 )} 
-                {/* <ul>
-                    {datalist02.map((item)=>(
+                <ul>
+                    {dataTap.map((item)=>(
                     <li key={item.id}>
                         <Link to={`/${item.id}`}>
                             <div className="hodoimgbox">
@@ -162,7 +75,7 @@ export default function Page({datalist02, clickHandle}){
                         </div>
                         </li>
                     ))}
-                    </ul> */}
+                    </ul>
             </div>
         </div>
     )

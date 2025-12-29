@@ -8,27 +8,7 @@ export default function Section({datalist}){
 
     // // 탭 메뉴 클릭시 category 구분 필터 생성
     const [tapfilter, setTapFilter]=useState('');
-    // const [categorys, setCategorys]=useState([]);
-
     
-    // useEffect(()=>{
-    //     fetch({datalist})
-    //     .then((res)=>{return res.datalist()})
-    //     .then((data)=>{setCategorys(data)
-    //         console.log('데이터')
-    //     })
-    //     .catch(()=>{})
-    //     .finally(()=>{})
-    // },[])
-    
-
-    // const nutsFilter = categorys.filter((item)=>item.category.includes('nuts'))
-    // const snackFilter = categorys.filter((item)=>item.category.includes('snack'))
-    // const creamFilter = categorys.filter((item)=>item.category.includes('cream'))
-    // const butterFilter = categorys.filter((item)=>item.category.includes('butter'))
-    // const giftFilter = categorys.filter((item)=>item.category.includes('gift'))
-    // const presentFilter = categorys.filter((item)=>item.category.includes('present'))
-
 
     const clickHandle = (num) => {
         if(num === 1){
@@ -41,8 +21,10 @@ export default function Section({datalist}){
             setTapFilter('butter')
         }else if(num === 5){
             setTapFilter('gift')
-        }else{
+        }else if(num === 6){
             setTapFilter('present')
+        }else{
+            setTapFilter('');
         }
     }
 
@@ -53,8 +35,9 @@ export default function Section({datalist}){
             <div className="top-title">{/* 빈 공간 */}</div>
             <div className="page-tap">
                 <ul>
-                    <li><Link to='/'>전체</Link></li>
-                    <li><button onClick={()=>clickHandle(5)}>선물용</button></li>
+                    <li><button onClick={()=>clickHandle(7)}>전체</button></li>
+                    <li><button onClick={()=>clickHandle(6)}>선물용</button></li>
+                    <li><button onClick={()=>clickHandle(5)}>답례용</button></li>
                     <li><button onClick={()=>clickHandle(4)}>앙버터</button></li>
                     <li><button onClick={()=>clickHandle(3)}>크림치즈</button></li>
                     <li><button onClick={()=>clickHandle(2)}>간식용</button></li>
@@ -62,7 +45,7 @@ export default function Section({datalist}){
                 </ul>
             </div>
             <div>
-                <Page datalist02={datalist} clickHandle={clickHandle}/>
+                <Page datalist02={datalist} tapfilter={tapfilter}/>
             </div>
         </div>
     )

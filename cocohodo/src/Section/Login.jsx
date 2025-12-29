@@ -17,8 +17,8 @@ export default function Login(){
             </div>
             <div className="join">
                 <ul>
-                    <li><input type="id" /></li>
-                    <li><input type="password" /></li>
+                    <li><input type="id" placeholder="ID를 입력하세요." /></li>
+                    <li><input type="password" placeholder="비밀번호를 입력하세요."/></li>
                     <li><button>로그인</button>
                     <p><input type="checkbox" />로그인 유지</p></li>
                 </ul>
