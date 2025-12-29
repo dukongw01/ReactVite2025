@@ -18,7 +18,7 @@ export default function Cart({datalist}){
         localStorage.setItem('cartlist', JSON.stringify(cartlist));
     },[cartlist]);    
 
-    // 장바구니 목록 삭제
+    // 장바구니 전체 삭제
     const clearcart = () => {
         setCartlist([]); //상태 초기화
         localStorage.removeItem('cartlist');
@@ -74,24 +74,28 @@ export default function Cart({datalist}){
             <div className="table-box">
                 {/* 장바구니  */}
                 <table>
-                    
-                    <caption><input type="checkbox" />장바구니 <p>총 상품:</p></caption>
+                    <caption>
+                        <div className="capbox">
+                            <h2>장바구니<p>총: <strong>{cartlist.length}</strong>개</p></h2>
+                            <button onClick={clearcart}>전체 삭제</button>
+                        </div>
+                    </caption>
                     <tbody>
-                        <tr>
+                        <tr className="th-bold">
                             <th className="big-th">상품 정보</th>
                             <th className="small-th">수량</th>
                             <th className="small-th">주문금액</th>
                             <th className="small-th">배송정보</th>
                         </tr>
                         {/* 상품정보 */}
-                            {cartlist.map((item)=>
+                            {cartlist.map((item, index)=>
                                <tr key={item.id}>
                                     <td  className="table-center-title">
                                         <input type="checkbox" />
                                         <img src={`/img/${item.title}`} alt={item.name}/>
                                         <p>{item.name}</p>
                                     </td>
-                                    <td>
+                                    <td className="table-rigt">
                                         <div className="table-btnbox">
                                             <button type="button" onClick={()=>minus(item.id)}>-</button>
                                             <p>{item.count}</p>
@@ -100,13 +104,13 @@ export default function Cart({datalist}){
                                         <button onClick={()=>delbtn(item.id)}>삭제</button>
                                     </td>
                                     <td className="rmador"><p>{item.price.toLocaleString("ko")}원</p></td>
-                                    <td className="qothd" ><p>배송비:<span>{item.price >= 10000 ? 0:3000}원</span></p></td>
+                                    {index === 0 && (<td className="qothd" rowSpan={cartlist.length}><p>배송비:<span>{item.price >= 50000 ? 0 : 3000}원<br/></span>(조건부 무료)</p></td>)}
                                 </tr>
                             )}
                     </tbody>
                 </table>
                 <div className="table-btm">
-                    <p><span>총 상품 금액: </span>{total}<strong>원</strong></p>
+                    <p><span>총 상품 금액: </span><strong>{total.toLocaleString("ko")}원</strong></p>
                     <button type="button">선택 상품주문</button>
                 </div>
             </div>

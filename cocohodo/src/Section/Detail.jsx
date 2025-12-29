@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Detail.css';
 import { useParams } from "react-router-dom";
-import Cart from "./Cart";
 import linkimg from "../../public/img/linkimg.png";
 
 export default function Detail({datalist}){
@@ -22,6 +21,31 @@ export default function Detail({datalist}){
     // 찜 기능
     const [likes, setLikes] = useState(false);
     const likeblack = ()=> setLikes('♥');
+
+    // 장바구니
+    const [cartlist, setCartlist] = useState(()=>{
+        const saved = localStorage.getItem('cartlist');
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    useEffect(()=>{
+        localStorage.setItem('cartlist', JSON.stringify(cartlist));
+    }, [cartlist]);
+
+      // 장바구니 담기, 모달
+    const cartbtnHandelr = (item) => {
+        const cartlistCopy = [...cartlist];
+        const findItem = cartlist.find((cartItem) => cartItem.id === item.id);
+
+        if(findItem === undefined){
+            cartlistCopy.push({...item, count: count}); 
+            alert(`${item.name} 장바구니에 담김`);
+        } else {
+            alert(`${item.name} 상품이 이미 존재합니다. 수량이 추가됩니다.`);
+            findItem.count += count; 
+        }
+        setCartlist(cartlistCopy);
+    }
 
 
     return(
@@ -89,7 +113,7 @@ export default function Detail({datalist}){
                                 <button type="button" className="sidebtn01">네이버페이</button>
                             </li>
                             <li>
-                                <button type="button" className="sidebtn02" onClick={()=>navigator('HodoCart')}> <Link to='/HodoCart'>장바구니</Link></button>
+                                <button type="button" className="sidebtn02" onClick={()=>cartbtnHandelr(findId)}>장바구니</button>
                             </li>
                             <li>
                                 <button type="button" className="sidebtn03" onClick={likeblack}> {likes !== false? `${likes} 찜하기`: "♡ 찜하기"}</button>

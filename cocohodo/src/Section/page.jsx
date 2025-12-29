@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './page.css';
+import carticon from '../../public/img/carticon.png';
 
 export default function Page({datalist02, tapfilter}){
 
@@ -71,7 +72,7 @@ export default function Page({datalist02, tapfilter}){
                                 </div>
                         </Link>
                         <div className="btncart">
-                             <button type="button" className="qkrnsl" onClick={()=>cartbtnHandelr(item)}><h1>+</h1></button>
+                             <button type="button" className="qkrnsl" onClick={()=>cartbtnHandelr(item)}> <img src={carticon} alt="carticon.png" /> </button>
                         </div>
                         </li>
                     ))}

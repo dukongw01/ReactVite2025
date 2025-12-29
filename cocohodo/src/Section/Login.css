@@ -37,9 +37,15 @@
     color: #31140e;
     background-color: #ffd900;
 }
+.form-container .top-login ul li .kakaobtn:hover{
+    background-color: #ffc400;
+}
 .form-container .top-login ul li .naverbtn{
     color: #f8f8f8;
     background-color: #37ad37;
+}
+.form-container .top-login ul li .naverbtn:hover{
+    background-color: #299b29;
 }
 .form-container .hrbar{/* 구분선 */
     margin: 0 auto;
@@ -98,6 +104,9 @@
     color: #f7f7f7;
     cursor: pointer;
 }
+.form-container .join ul li button:hover{  
+    background-color: #7e1731;
+}
 .form-container .join p{
     margin: 0;
     padding: 0;
@@ -113,6 +122,9 @@
 .form-container .join-text p a{
     text-decoration: none;
     color: #333;
+}
+.form-container .join-text p a:hover{
+    font-weight: 500;
 }
 
 .form-container .non-join{ /*비회원 주문*/
@@ -131,4 +143,8 @@
     color: #555;
     background-color: #bdbdbd;
     cursor: pointer;
+}
+.form-container .non-join button:hover{
+    color: #6d6d6d;
+    background-color: #cfcfcf;
 }
