@@ -1,6 +1,7 @@
+
 export default function NailList(){
 
-    const NaliType = [
+     const nailType = [
         // 색상
         {id:1, type:'color', name:'반디젤BF101', title:'Thumbnail01', price:50000},
         {id:2, type:'color', name:'반디젤BF102', title:'Thumbnail02', price:50000},
@@ -79,5 +80,5 @@ export default function NailList(){
         {id:70, type:'tool', name:'BLED 스마트램프 3종', title:'Thumbnail70', price:720000}
     ]
 
-    return NaliType
+    return nailType //App.jsx에서 Naildata로 내보낼 예정
 }
