@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import './HeaderBanner.css';
 
 export default function HeaderBanner(){
 
@@ -53,22 +54,23 @@ export default function HeaderBanner(){
                         </li>
                     ))}
                 </ul>
+                {/* 슬라이드 앞뒤 조작 버튼 */}
+                <button type="button" onClick={sdPrev} className="sdPrev">＜</button> {/* 뒤 */}
+                <button type="button" onClick={sdNext} className="sdNext">＞</button> {/* 앞 */}
             </div>
             <div className="btnbox02">
-                {/* 슬라이드 조작 버튼 */}
-                <button type="button" onClick={sdPrev} className="sdPrev">←</button> {/* 뒤 */}
-                <button type="button" onClick={sdStop} className="sdStop">
-                {playBigsd ? <h1>■</h1> : <h3>▶</h3>} {/* 정지 : 재생 */}
-                </button>
-                <button type="button" onClick={sdNext} className="sdNext">→</button> {/* 앞 */}
-            </div>
-            <div className="Tap_btn">
-                {/* 슬라이드 순번 버튼 */}
-                {BigSdItem.map((_, index) => (
-                    <button key={index} className={`slideBig ${index === bigsd ? "on" : "off"}`}
-                    type="button" onClick={() => BsdClick(index)}
-                    aria-label={`${index + 1}번째 슬라이드 이동`}><h2>●</h2></button>
-                ))}
+                {/* 슬라이드 1234순번 버튼 */}
+                <div className="Tap_btn">
+                    {/* 정지 : 재생 */}
+                    <button type="button" onClick={sdStop} className="sdStop">
+                        {playBigsd ? <img src='./bandi_img/stop.png' alt="stopicon" /> : <img src='./bandi_img/play.png' alt="playicon" />}
+                    </button>
+                    {BigSdItem.map((_, index) => (
+                        <button key={index} className={`slideBig ${index === bigsd ? "on" : "off"}`}
+                        type="button" onClick={() => BsdClick(index)}
+                        aria-label={`${index + 1}번째 슬라이드 이동`}>●</button>
+                    ))}
+                </div>
             </div>
         </div>
 
