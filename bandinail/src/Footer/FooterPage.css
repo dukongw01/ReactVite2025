@@ -9,8 +9,10 @@
 }
 
 .FTcontainer .footer-box{
+    margin: 0 auto;
+    width: 1300px;
     display: flex;
-    /* 가운데 정렬 재점검하기 */
+    justify-content: space-between;
 }
 
 .FTcontainer .footer-box .left-box{
@@ -42,7 +44,7 @@
     cursor: pointer;
 }
 
-.FTcontainer .footer-box .right-box{
+.FTcontainer .footer-box .right-box{ /* 고객 상담 */
     margin: 50px;
     color: #555;
 }
@@ -50,5 +52,15 @@
     font-size: 30px;
 }
 .FTcontainer .footer-box .right-box ul li p{
+    margin: 10px 0 0 0;
     font-size: 12px;
+}
+
+.FTcontainer .footer-box .right-box ul li .sns-box img{ /*sns 이미지*/
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    opacity: 60%;
+    padding-right: 10px;
+    cursor: pointer;
 }

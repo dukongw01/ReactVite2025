@@ -1,10 +1,11 @@
 import { useEffect, useState, useRef } from "react";
+import './SectionBanner.css';
 
 export default function SectionBanner(){
     //헤더 배너 MSlide 이미지 접근
     const MSdItem = [
         {id:1, imgname:'bandi_img/banner01.jpg'},
-        {id:2, imgname:'bandi_img/banner02.jpg'},
+        {id:2, imgname:'bandi_img/banner02.jpg'}
     ];
 
     //슬라이드 인덱스
@@ -50,22 +51,22 @@ export default function SectionBanner(){
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div className="btnbar02">
-                {/* 슬라이드 조작 버튼 */}
-                <button type="button" onClick={sdPrev} className="sdPrev">←</button> {/* 뒤 */}
-                <button type="button" onClick={sdStop} className="sdStop">
-                {playMsd ? <h1>■</h1> : <h3>▶</h3>} {/* 정지 : 재생 */}
-                </button>
-                <button type="button" onClick={sdNext} className="sdNext">→</button> {/* 앞 */}
-            </div>
-            <div className="Tap_btn02">
-                {/* 슬라이드 순번 버튼 */}
-                {MSdItem.map((_, index) => (
-                    <button key={index} className={`slideM ${index === Msd ? "on" : "off"}`}
-                    type="button" onClick={() => MsdClick(index)}
-                    aria-label={`${index + 1}번째 슬라이드 이동`}><h2>●</h2></button>
-                ))}
+                <div className="btnbar02">
+                    {/* 슬라이드 조작 버튼 */}
+                    <button type="button" onClick={sdPrev} className="sdPrev">＜</button> {/* 뒤 */}
+                    <button type="button" onClick={sdNext} className="sdNext">＞</button> {/* 앞 */}
+                </div>
+                <div className="Tap_btn02">
+                    <button type="button" onClick={sdStop} className="sdStop">
+                    {playMsd ? <img src='./bandi_img/stop.png' alt="stopicon" /> : <img src='./bandi_img/play.png' alt="playicon" />} {/* 정지 : 재생 */}
+                    </button>
+                    {/* 슬라이드 순번 버튼 */}
+                    {MSdItem.map((_, index) => (
+                        <button key={index} className={`slideM${index === Msd ? "on" : "off"}`}
+                        type="button" onClick={() => MsdClick(index)}
+                        aria-label={`${index + 1}번째 슬라이드 이동`}> ● </button>
+                    ))}
+                </div>
             </div>
         </div>
 

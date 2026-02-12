@@ -8,16 +8,16 @@
     width: 100%;
     height: 60px;
     align-items: center;
+    background-color: #eeffff;
 }
 
 .header-Containner .hd-bar{
     margin: 0 auto;
     display: flex;
-    width: 100%;
+    width: 95%;
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    background-color: #eeffff;
 }
 
 .header-Containner .hd-bar .menu-bar ul{ /* 헤더 탭 왼쪽 샵 메뉴 */

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderBanner from "../Banner/HeaderBanner";
-import SectionBanner from "../Banner/SectionBanner";
+import ShopPage from "../Section/ShopPage";
 
 export default function MainPage(){
 
@@ -9,7 +9,7 @@ export default function MainPage(){
 
         <div className="main-container">
             <HeaderBanner/>
-            <SectionBanner/>
+            <ShopPage/>
         </div>
 
     )

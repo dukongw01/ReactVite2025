@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.MSlideContainer{
+    width: 100%;
+    display: flex;
+}
+
+.MSlideContainer .btnbar{
+    position: relative;
+}
+
+.MSlideContainer .btnbar .btnbar02 .sdPrev{
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+}
+.MSlideContainer .btnbar .btnbar02 .sdNext{
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+}
+
+.MSlideContainer .btnbar .Tap_btn02{
+    position: absolute;
+    padding: 5px 15px;
+    display: flex;
+    gap: 10px;
+    left: 35%;
+    bottom: 5%;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #999;
+    background-color: #eeee;
+}
+.MSlideContainer .btnbar .Tap_btn02 button{
+    border: none;
+}
+.MSlideContainer .btnbar .Tap_btn02 img{
+    width: 20px;
+    height: 20px;
+    transform: translateX(-5%) translateY(10%);
+    opacity: 70%;
+}
+
+.MSlideContainer .btnbar .Tap_btn02 .slideMoff{
+    opacity: 50%;
+}
+.MSlideContainer .btnbar .Tap_btn02 .slideMon{
+    opacity: 100%;
+}

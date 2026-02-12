@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import SectionBanner from "../Banner/SectionBanner";
 
-export default function NailFilter(){
+export default function NailFilter({nailType}){
 
     // ShopPage로 필터 내보내기
 
@@ -22,7 +23,7 @@ export default function NailFilter(){
         <div>
           <div className="section-container">
                       <div className="top-title">{/* 빈 공간 */}</div>
-                      <div className="page-tap">
+                      <div className="page-tap"> 
                           <ul>
                               <li><button onClick={()=>ClickTap(0)}>전체</button></li>
                               <li><button onClick={()=>ClickTap(1)}>젤</button></li>
@@ -33,12 +34,8 @@ export default function NailFilter(){
                               <li><button onClick={()=>ClickTap(6)}>툴</button></li>
                           </ul>
                       </div>
-                      <div>
-                          <NailList Naildata={filterNailData} />
-                      </div>
             </div>    
         </div>
     )
 
-    return nailfilter, setNailfilter, ClickTap
 }

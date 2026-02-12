@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import './HeaderBanner.css';
+import { Link, Links } from "react-router-dom";
 
 export default function HeaderBanner(){
 
     //헤더 배너 BigSlide 이미지 접근
     const BigSdItem = [
-        {id:1, imgname:'bandi_img/slide_01.jpg'},
-        {id:2, imgname:'bandi_img/slide_02.jpg'},
-        {id:3, imgname:'bandi_img/slide_03.jpg'},
-        {id:4, imgname:'bandi_img/slide_04.jpg'}
+        {id:1, imgname:'bandi_img/slide_01.jpg', url:'/'},
+        {id:2, imgname:'bandi_img/slide_02.jpg', url:'/'},
+        {id:3, imgname:'bandi_img/slide_03.jpg', url:'/'},
+        {id:4, imgname:'bandi_img/slide_04.jpg', url:'/'}
     ];
 
     //슬라이드 인덱스
@@ -65,8 +66,10 @@ export default function HeaderBanner(){
                     <button type="button" onClick={sdStop} className="sdStop">
                         {playBigsd ? <img src='./bandi_img/stop.png' alt="stopicon" /> : <img src='./bandi_img/play.png' alt="playicon" />}
                     </button>
+                </div>
+                <div className="Tap_btn02">
                     {BigSdItem.map((_, index) => (
-                        <button key={index} className={`slideBig ${index === bigsd ? "on" : "off"}`}
+                        <button key={index} className={`slideBig${index === bigsd ? "on" : "off"}`}
                         type="button" onClick={() => BsdClick(index)}
                         aria-label={`${index + 1}번째 슬라이드 이동`}>●</button>
                     ))}

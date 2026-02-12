@@ -21,7 +21,7 @@ export default function HeaderPage(){
                     </ul>
                 </div>
                 <div className="logo">
-                    <Link to='/MainPage'><h1>BANDI</h1></Link>
+                    <Link to='/'><h1>BANDI</h1></Link>
                 </div>
                 <div className="mymenu-bar">
                         {/* 검색 아이콘 */}

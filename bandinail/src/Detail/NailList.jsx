@@ -80,5 +80,5 @@ export default function NailList(){
         {id:70, type:'tool', name:'BLED 스마트램프 3종', title:'Thumbnail70', price:720000}
     ]
 
-    return nailType //App.jsx에서 Naildata로 내보낼 예정
+    return nailType // Nailfilter.jsx로 내보낼 예정
 }
