@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Cart(Naildata){
+export default function Cart({naildata}){
 
     //카트 목록
     const [cartList, setCartList] = useState(()=>{
-        const cartsave = localStorage.getitem('cartList');
+        const cartsave = localStorage.getItem('cartList');
         return cartsave? JSON.parse(cartsave):[];
         console.log("cart자료", cartsave);
     });
