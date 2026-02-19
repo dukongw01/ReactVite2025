@@ -1,21 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Cart({naildata}){
+export default function Cart({}){
 
-    //카트 목록
-    const [cartList, setCartList] = useState(()=>{
-        const cartsave = localStorage.getItem('cartList');
-        return cartsave? JSON.parse(cartsave):[];
-        console.log("cart자료", cartsave);
-    });
+    
 
     const [cartTotal, setCartTotal]=useState(0);
 
-    //카트 바뀜 localstorage 저장
-    useEffect(()=>{
-        localStorage.setItem('cartList', JSON.stringify(cartList));
-    },[cartList]);
 
     //장바구니 전체 삭제
     const cartClear = () => {

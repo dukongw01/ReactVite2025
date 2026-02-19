@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderBanner from "../Banner/HeaderBanner";
-import ShopPage from "../Section/ShopPage";
+import NailFilter from "../Section/NailFilter";
 
 export default function MainPage(){
 
@@ -9,7 +9,7 @@ export default function MainPage(){
 
         <div className="main-container">
             <HeaderBanner/>
-            <ShopPage/>
+            <NailFilter/>
         </div>
 
     )
