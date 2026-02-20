@@ -3,8 +3,8 @@ export default function NailList(){
 
      const nailType = [
         // 색상
-        {id:1, type:'color', name:'반디젤BF101', title:'Thumbnail01', price:50000},
-        {id:2, type:'color', name:'반디젤BF102', title:'Thumbnail02', price:50000},
+        {id:1, type:'color', name:'반디젤BF101', title:'Thumbnail01', price:50000, sale:'10%'},
+        {id:2, type:'color', name:'반디젤BF102', title:'Thumbnail02', price:50000, sale:'10%'},
         {id:3, type:'color', name:'반디젤BF103', title:'Thumbnail03', price:50000},
         {id:4, type:'color', name:'반디젤BF104', title:'Thumbnail06', price:50000},
         {id:5, type:'color', name:'반디젤BF105', title:'Thumbnail07', price:50000},
@@ -18,7 +18,7 @@ export default function NailList(){
         {id:13, type:'color', name:'반디젤BF113', title:'Thumbnail15', price:50000},
         {id:14, type:'color', name:'반디젤BF114', title:'Thumbnail16', price:50000},
         {id:15, type:'color', name:'반디젤BF115', title:'Thumbnail17', price:50000},
-        {id:16, type:'color', name:'반디젤BF116', title:'Thumbnail18', price:50000},
+        {id:16, type:'color', name:'반디젤BF116', title:'Thumbnail18', price:50000, sale:'10%'},
         {id:17, type:'color', name:'반디젤BF117', title:'Thumbnail19', price:50000},
         {id:18, type:'color', name:'반디젤BF118', title:'Thumbnail20', price:50000},
         {id:19, type:'color', name:'반디젤BF119', title:'Thumbnail21', price:50000},
@@ -41,7 +41,7 @@ export default function NailList(){
         {id:36, type:'color', name:'반디젤BF136', title:'Thumbnail38', price:50000},
         {id:37, type:'color', name:'반디젤BF137', title:'Thumbnail39', price:50000},
         {id:38, type:'color', name:'반디젤BF138', title:'Thumbnail40', price:50000},
-        {id:39, type:'color', name:'반디젤BF139', title:'Thumbnail41', price:50000},
+        {id:39, type:'color', name:'반디젤BF139', title:'Thumbnail41', price:50000, sale:'10%'},
         {id:40, type:'color', name:'반디젤BF140', title:'Thumbnail42', price:50000},
         {id:41, type:'color', name:'반디젤BF141', title:'Thumbnail43', price:50000},
         {id:42, type:'color', name:'반디젤BF142', title:'Thumbnail44', price:50000},
@@ -49,7 +49,7 @@ export default function NailList(){
         {id:44, type:'color', name:'반디젤BF144', title:'Thumbnail46', price:50000},
         {id:45, type:'color', name:'반디젤BF145', title:'Thumbnail47', price:50000},
         {id:46, type:'color', name:'반디젤BF146', title:'Thumbnail48', price:50000},
-        {id:47, type:'color', name:'반디젤BF147', title:'Thumbnail49', price:50000},
+        {id:47, type:'color', name:'반디젤BF147', title:'Thumbnail49', price:50000, sale:'10%'},
         {id:48, type:'color', name:'반디젤BF148', title:'Thumbnail50', price:50000},
         {id:49, type:'color', name:'반디젤BF149', title:'Thumbnail51', price:50000},
         {id:50, type:'color', name:'반디젤BF150', title:'Thumbnail52', price:50000},
@@ -58,7 +58,7 @@ export default function NailList(){
         {id:53, type:'color', name:'반디젤BF153', title:'Thumbnail55', price:50000},
         {id:54, type:'color', name:'반디젤BF154', title:'Thumbnail56', price:50000},
         //글리터
-        {id:55, type:'glitter', name:'반디젤 글리터', title:'Thumbnail04', price:50000},
+        {id:55, type:'glitter', name:'반디젤 글리터', title:'Thumbnail04', price:50000, sale:'10%'},
         {id:56, type:'glitter', name:'반디젤 샌드펄', title:'Thumbnail05', price:50000},
         // 폴리쉬
         {id:57, type:'polish', name:'울트라 베이스 코트', title:'Thumbnail57', price:30000},
@@ -68,16 +68,16 @@ export default function NailList(){
         {id:60, type:'remover', name:'네이처 리무버', title:'Thumbnail60', price:15000},
         {id:61, type:'remover', name:'큐티클 리무버', title:'Thumbnail61', price:50000},
         //케어
-        {id:62, type:'care', name:'앰플 듀오 세트', title:'Thumbnail62', price:45000},
+        {id:62, type:'care', name:'앰플 듀오 세트', title:'Thumbnail62', price:45000, sale:'20%'},
         {id:63, type:'care', name:'플라워비타 에센스로션', title:'Thumbnail63', price:15000},
         {id:64, type:'care', name:'드롭스 오일 시그니처', title:'Thumbnail64', price:30000},
         //툴
         {id:65, type:'tool', name:'반디 메탈 페디파일', title:'Thumbnail65', price:36000},
         {id:66, type:'tool', name:'반디 프로파일 3종', title:'Thumbnail66', price:7000},
-        {id:67, type:'tool', name:'프로 큐티클 푸셔', title:'Thumbnail67', price:36000},
+        {id:67, type:'tool', name:'프로 큐티클 푸셔', title:'Thumbnail67', price:36000, sale:'15%'},
         {id:68, type:'tool', name:'토우 세퍼레이터', title:'Thumbnail68', price:1000},
         {id:69, type:'tool', name:'프로 큐티클 니퍼', title:'Thumbnail69', price:70000},
-        {id:70, type:'tool', name:'BLED 스마트램프 3종', title:'Thumbnail70', price:720000}
+        {id:70, type:'tool', name:'BLED 스마트램프 3종', title:'Thumbnail70', price:720000, sale:'25%'}
     ]
 
     return nailType // APP.jsx로 데이터 보내기

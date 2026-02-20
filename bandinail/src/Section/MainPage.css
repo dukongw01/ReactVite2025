@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{}
+
+.main-container .main-middle{
+    margin: auto;
+    width: 1800px;
+    margin-top: 40px;
+}
+.main-container .main-middle .main-grup{
+    display: flex;
+    justify-content: space-between;
+}
+.main-container .main-middle .main-grup .main-item h2{
+    margin-bottom: 40px;
+}
+.main-container .main-middle .main-grup .main-item{
+    text-align: center;
+}
+
+.main-container .main-middle .main-grup .main-item ul{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+}
+
+.main-container .main-middle .main-grup .main-item ul li{ /* 할인 상품 4개*/
+    text-align: center;
+    /* width: 350px;
+    height: 550px; */
+    background-color: antiquewhite;
+    /* overflow: hidden; */
+}
+
+/* 썸네일 이미지 */
+.main-container .main-middle .main-grup .main-item ul li .catebox img{ 
+    /* width: 400px; */
+    /* transform: translateX(-5%) */
+}
+
+.main-container .onebanner{ /* 중간 배너 */
+    margin: 40px 0 40px 0;
+}
+
+.main-container .sns-review{ /* sns 리뷰*/
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 1800px;
+    text-align: center;
+}
+.main-container .sns-review h2{
+    margin: 20px 0 5px 0;
+}
+.main-container .sns-review p{
+    margin: 0 0 20px 0;
+    color: #999;
+}
+.main-container .sns-review .review-box{
+    display: flex;
+    justify-content: space-around;
+}
+.main-container .sns-review .review-box a img{
+    width: 400px;
+}

@@ -10,7 +10,7 @@ export default function HeaderPage(){
                     <ul>
                         <li><Link to='/AboutPage'>ABOUT US</Link></li>
                         {/* 브랜드 스토리 , 전국지사, 오픈살롱 */}
-                        <li><Link to='/ShopPage'>PRODUCT</Link></li>
+                        <li><Link to='/NailFilter'>PRODUCT</Link></li>
                         {/* 온라인몰 */}
                         <li><Link to='/GshpPage'>FRANCHISE</Link></li>
                         {/* 가맹점 안내 (위치) */}
