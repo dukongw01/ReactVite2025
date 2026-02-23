@@ -7,13 +7,14 @@
 
 .main-container .main-middle{
     margin: auto;
-    width: 1800px;
+    width: 1600px;
     margin-top: 40px;
 }
 .main-container .main-middle .main-grup{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 .main-container .main-middle .main-grup .main-item h2{
     margin-bottom: 40px;
 }
@@ -23,25 +24,103 @@
 
 .main-container .main-middle .main-grup .main-item ul{
     display: flex;
-    /* flex-wrap: wrap; */
-    gap: 10px;
+    gap: 5px;
 }
 
 .main-container .main-middle .main-grup .main-item ul li{ /* 할인 상품 4개*/
     text-align: center;
-    /* width: 350px;
-    height: 550px; */
-    background-color: antiquewhite;
-    /* overflow: hidden; */
+    width: 295px;
+    height: 500px;
+    border-radius: 10px;
+    /* border: 1px solid #e0e0e0ee; */
+    overflow: hidden;
+    position: relative; /* 카트 버튼 고정용*/
+}
+.main-container .main-middle .main-grup .main-item ul li a{
+    text-decoration: none;
+    color: #333;
 }
 
 /* 썸네일 이미지 */
 .main-container .main-middle .main-grup .main-item ul li .catebox img{ 
-    /* width: 400px; */
-    /* transform: translateX(-5%) */
+    width: 350px;
+    transform: translateX(-25px);
+}
+.main-container .main-middle .main-grup .main-item ul li .catebox img:hover{
+    opacity: 70%;
 }
 
-.main-container .onebanner{ /* 중간 배너 */
+.main-container .main-middle .main-grup .main-item ul li .pricebox{
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+
+.main-container .main-middle .main-grup .main-item ul li .pricebox .item-name{ /* 상품명 */
+    font-weight: 500;
+    margin: 5px 0;
+    color: #333;
+}
+.main-container .main-middle .main-grup .main-item ul li .pricebox .item-price{ /* 원가 */
+    font-weight: 500;
+    color: #999;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.main-container .main-middle .main-grup .main-item ul li .pricebox p strong{ /* 할인가 */
+    color: #333;
+}
+
+.main-container .main-middle .main-grup .main-item ul li .pricebox p span{
+    color: #ff3223cc;
+    margin: 0 0 0 5px;
+}
+.main-container .main-middle .main-grup .main-item ul li .pricebox button{ /* 상세보기 버튼 */
+    margin: 10px 0 0 0;
+    padding: 8px 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #defdffee;
+    background-color: #defdffee;
+    cursor: pointer;
+}
+.main-container .main-middle .main-grup .main-item ul li .pricebox button:hover{
+    background-color: #c3f3ffee;
+}
+
+.main-container .main-middle .main-grup .main-item .cart-btn{ /* 카트 버튼 */
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #defdffee;
+}
+.main-container .main-middle .main-grup .main-item .cart-btn button{
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.main-container .main-middle .main-grup .main-item .cart-btn:hover{
+    background-color: #c3f3ffee;
+}
+
+.main-container .main-middle .main-grup .main-item .cart-btn button img{
+    width: 25px;
+    height: 25px;
+    transform: translateX(3px) translateY(3px);
+}
+
+
+.main-container .onebanner{
     margin: 40px 0 40px 0;
 }
 

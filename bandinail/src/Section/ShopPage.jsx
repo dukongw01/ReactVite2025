@@ -79,10 +79,10 @@ export default function ShopPage({Datalist, FilterData}){
                                 </div>
                                 <div className="pricebox">
                                     {/* 가격 */}
-                                    <p>
-                                        {item.price.toLocaleString('ko')}원 </p>
+                                    <h4>{item.name}</h4>
+                                    <p className={`item-price ${item.sale ? 'is-sale' : 'is-normal'}`}> {item.price.toLocaleString('ko')}원 </p>
                                         {/* 할인 적용 표시 */}
-                                        {item.sale && ( <p> 
+                                        {item.sale && ( <p className="sale-price"> 
                                             <strong>
                                                 {(item.price * (1 - parseInt(item.sale) / 100)).toLocaleString('ko')}원
                                                 {/* 퍼센트 */}

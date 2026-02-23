@@ -1,8 +1,123 @@
-*{
-    margin: 0;
-    padding: 0;
+
+
+.Main-container{
+}
+.Main-container .Tap-filer{
+}
+.Main-container .Tap-filer ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.catebox img{
-    width: 300px;
+.Main-container .Tap-filer ul li{
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative; /*카트 버튼 고정용*/
 }
+.Main-container .Tap-filer ul li a{
+    text-decoration: none;
+    color: #333;
+}
+.Main-container .Tap-filer ul li .catebox{ /* 썸네일 */
+    
+}
+
+.Main-container .Tap-filer ul li .catebox img{
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+}
+.Main-container .Tap-filer ul li .catebox img:hover{
+    opacity: 70%;
+}
+
+.Main-container .Tap-filer ul li .pricebox{
+    margin: 10px 0;
+}
+.Main-container .Tap-filer ul li .pricebox h4{ /*상품명*/
+    margin: 10px 0 10px 0;
+    font-weight: 500;
+}
+.Main-container .Tap-filer ul li .pricebox .item-price.is-sale{ /*원가*/
+    font-weight: 500;
+    color: #a0a0a0;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.Main-container .Tap-filer ul li .pricebox .item-price.is-normal {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+
+.Main-container .Tap-filer ul li .pricebox .sale-price strong{ /*할인가*/
+    color: #333;
+    font-weight: 600;
+}
+.Main-container .Tap-filer ul li .pricebox .sale-price span{ /*퍼센트*/
+    color: #ff3223cc;
+    margin: 0 0 0 5px;
+}
+.Main-container .Tap-filer ul li .pricebox button{ /*상세버튼*/
+    margin: 10px 0 0 0;
+    padding: 8px 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #defdffee;
+    background-color: #defdffee;
+    cursor: pointer;
+}
+.Main-container .Tap-filer ul li .pricebox button:hover{
+    background-color: #c3f3ffee;
+}
+
+.Main-container .Tap-filer ul li .cart-btn{ /* 카트 버튼*/
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #defdffee;
+}
+
+.Main-container .Tap-filer ul li .cart-btn button{
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.Main-container .Tap-filer ul li .cart-btn:hover{
+    background-color: #c3f3ffee;
+}
+.Main-container .Tap-filer ul li .cart-btn button img{
+    width: 25px;
+    height: 25px;
+    transform: translateX(3px) translateY(3px);
+}
+
+.Main-container .Tap-filer .pagination{ /* 하단 페이지 버튼*/
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.Main-container .Tap-filer .pagination button{
+    width: 25px;
+    height: 25px;
+    margin: 0 10px auto;
+}
+.Main-container .Tap-filer .pagination button .active{}

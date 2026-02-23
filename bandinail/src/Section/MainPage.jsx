@@ -38,7 +38,7 @@ export default function MainPage({nailDataList}){
                     </div>
                     {/* 아이템 */}
                     <div className="main-item">
-                        <h2>할인어쩌고굉장한영어멘트</h2>
+                        <h2>Simply Irresistible Deals</h2>
                         <ul>
                             {saleItems.map((item) => (
                                 <li key={item.id}>
@@ -52,7 +52,7 @@ export default function MainPage({nailDataList}){
                                             {/* 상품명 */}
                                             <p className="item-name">{item.name}</p>
                                             {/* 원가 */}
-                                            <p>{item.price.toLocaleString('ko-KR')}원</p>
+                                            <p className="item-price">{item.price.toLocaleString('ko-KR')}원</p>
                                             {/* 할인가 */}
                                             {item.sale && (
                                                 <p>
