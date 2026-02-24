@@ -27,7 +27,8 @@
     border-radius: 50%;
 }
 .category-container .top-category ul li button:hover{
-    font-weight: 600;
+    font-weight: bold;
+    text-decoration: underline;
 }
 .side-colorchip ul li div{
     margin: 5px;
@@ -67,6 +68,7 @@
 }
 .category-container .side-cp .side-category ul li button:hover{
     background-color: #c3f3ffee;;
+    font-weight: bold;
 }
 
 .category-container .side-cp .side-category .side-colorchip{
@@ -96,6 +98,7 @@
 .category-container .side-cp .side-category .side-colorchip ul li .colorChips06{ background-color: #8210e0; }
 .category-container .side-cp .side-category .side-colorchip ul li .colorChips07{ background-color: #fffcfc; border: 1px solid #cecece; }
 .category-container .side-cp .side-category .side-colorchip ul li .colorChips08{ background-color: #222222; }
+.category-container .side-cp .side-category .side-colorchip ul li div:hover{ border: 1px solid #333; }
 /* 컬러버튼 끝 */
 
 .category-container .side-cp .side-category .side-button button{
@@ -109,6 +112,7 @@
 }
 .category-container .side-cp .side-category .side-button button:hover{
     background-color: #defdffee;
+    font-weight: bold;
 }
 
 .category-container .side-cp .shoping{

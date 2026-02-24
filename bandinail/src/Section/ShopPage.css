@@ -87,7 +87,7 @@
     align-items: center;
     text-align: center;
     border-radius: 25px;
-    background-color: #defdffee;
+    background-color: white;
 }
 
 .Main-container .Tap-filer ul li .cart-btn button{
@@ -112,12 +112,26 @@
     margin: 50px auto;
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .Main-container .Tap-filer .pagination button{
     width: 25px;
     height: 25px;
     margin: 0 10px auto;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    cursor: pointer;
 }
-.Main-container .Tap-filer .pagination button .active{}
+.Main-container .Tap-filer .pagination button.active{
+    color: #333;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.Main-container .Tap-filer .pagination button:hover{
+    font-weight: 600;
+}

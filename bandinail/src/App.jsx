@@ -28,7 +28,7 @@ function App() {
           <Route path='/' element={<MainPage nailDataList={nailData}/>}/>
           <Route path='/NailFilter' element={<NailFilter nailDataList={nailData} />}/>
           <Route path='/LoginPage' element={<LoginPage/>}/>
-          <Route path='/Cart' element={<Cart nailDataList={nailData}/>}/>
+          <Route path='/Cart' element={<Cart/>}/>
           <Route path='/JoinPage' element={<JoinPage/>}/>
           <Route path='/DetailPage' element={<DetailPage nailDataList={nailData}/>}/>
         </Routes>
