@@ -30,7 +30,7 @@ function App() {
           <Route path='/LoginPage' element={<LoginPage/>}/>
           <Route path='/Cart' element={<Cart/>}/>
           <Route path='/JoinPage' element={<JoinPage/>}/>
-          <Route path='/DetailPage' element={<DetailPage nailDataList={nailData}/>}/>
+          <Route path='/DetailPage:id' element={<DetailPage nailDataList={nailData}/>}/>
         </Routes>
         <FooterPage/>
       </BrowserRouter>

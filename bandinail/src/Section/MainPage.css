@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-.main-container{}
 
 .main-container .main-middle{
     margin: auto;
@@ -87,6 +86,7 @@
 }
 .main-container .main-middle .main-grup .main-item ul li .pricebox button:hover{
     background-color: #c3f3ffee;
+    font-weight: bold;
 }
 
 .main-container .main-middle .main-grup .main-item .cart-btn{ /* 카트 버튼 */
@@ -117,6 +117,21 @@
     width: 25px;
     height: 25px;
     transform: translateX(3px) translateY(3px);
+}
+
+.main-container .main-middle .main-grup .main-item .morebtn{ /* 더보기 버튼 */
+    margin: 20px 0;
+    padding: 5px 20px 5px 20px;
+    background-color: transparent;
+    border: 1px solid #c3f3ffee;
+    border-radius: 5px;
+}
+.main-container .main-middle .main-grup .main-item .morebtn a{
+    text-decoration: none;
+    color: #333;
+}
+.main-container .main-middle .main-grup .main-item .morebtn:hover{
+    font-weight: bold;
 }
 
 

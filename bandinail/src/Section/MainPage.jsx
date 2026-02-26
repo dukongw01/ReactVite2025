@@ -75,6 +75,7 @@ export default function MainPage({nailDataList}){
                                 </li>
                             ))}
                         </ul>
+                        <button type="button" className="morebtn"><Link to='/NailFilter'>더보기</Link></button>
                     </div>
                 </div>
                 {/* 쇼핑몰 가장 첫페이지 끝 */}

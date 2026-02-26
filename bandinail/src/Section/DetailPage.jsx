@@ -10,16 +10,16 @@ export default function DetailPage({nailDataList}){
 
     const {id} = useParams();
     const findItem = nailDataList.find((item)=> item.id === Number(id))
-    console.log(findId);
+    console.log("++++++++",findItem.item);
 
     //수량 증가 감소
     const [count, setCount]=useState(1);
     const plusbtn = () => setCount(count+1);
-    const minusbtn = () => {if(count>1) setCount(count-1);};
+    const minusbtn = () => { if (count>1) setCount(count-1);};
 
     //찜
-    count [likes, setLikes] = useState(false);
-    const likes = ()=> setLikes('♥');
+    const [likeit, setLikeit] = useState(false);
+    const likefull = ()=> setLikeit('♥');
 
     //장바구니
     const [cartIn, setCartIn] = useState(()=>{
@@ -38,6 +38,7 @@ export default function DetailPage({nailDataList}){
         const findItem = cartIn.find((cartItem)=>cartItem.id === item.id);
         if(findItem === undefined){
             cartInCopy.push({...item, count:count});
+            alert(`${item.name} 장바구니 담김`);
         }else{
             alert(`${item.name} 담긴 수량 추가`);
             findItem.count += count;}

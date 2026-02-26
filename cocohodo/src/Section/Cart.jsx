@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './Cart.css';
 
-export default function Cart({datalist}){
+export default function Cart(){
 
     // 장바구니 목록 
     const [cartlist, setCartlist] = useState(()=>{
