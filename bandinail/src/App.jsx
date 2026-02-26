@@ -30,7 +30,8 @@ function App() {
           <Route path='/LoginPage' element={<LoginPage/>}/>
           <Route path='/Cart' element={<Cart/>}/>
           <Route path='/JoinPage' element={<JoinPage/>}/>
-          <Route path='/DetailPage:id' element={<DetailPage nailDataList={nailData}/>}/>
+          <Route path='/DetailPage/:id' element={<DetailPage nailDataList={nailData}/>}/>
+          {/* id를 집어넣고 maping을 돌리면 받아올 id를 적어줘야한다. '/:id' */}
         </Routes>
         <FooterPage/>
       </BrowserRouter>

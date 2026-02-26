@@ -26,13 +26,13 @@ export default function HeaderPage(){
                 <div className="mymenu-bar">
                         {/* 검색 아이콘 */}
                     <div className="search-bar">
-                        <input type="text"/><img src='./bandi_img/search.png' alt="searchicon" />
+                        <input type="text"/><img src='/bandi_img/search.png' alt="searchicon" />
                     </div>
                     <ul>
                         {/* 유저 아이콘 */}
-                        <li><Link to='/LoginPage'><img src='./bandi_img/icon_user.png' alt="usericon" /></Link></li>
+                        <li><Link to='/LoginPage'><img src='/bandi_img/icon_user.png' alt="usericon" /></Link></li>
                         {/* 장바구니 아이콘 */}
-                        <li><Link to='/Cart'><img src='./bandi_img/cart.png' alt="carticon" /></Link></li>
+                        <li><Link to='/Cart'><img src='/bandi_img/cart.png' alt="carticon" /></Link></li>
                     </ul>
                 </div>
             </div>

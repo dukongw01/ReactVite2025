@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.detailcontainer{
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 1600px;
+}
+.detailcontainer .container-sub{
+    display: flex;
+    justify-content: space-around;
+}
+.detailcontainer .container-sub .leftbox .imgbox img{ /* 왼쪽 썸네일 */
+    width: 550px;
+    height: 550px;
+}
+.detailcontainer .container-sub .rightbox{ /* 오른쪽 영역*/
+    /* display: flex; */
+    width: 700px;
+}
+
+.detailcontainer .container-sub .rightbox h2{ /* 상품명*/
+    margin: 0 0 20px 0;
+}
+
+.detailcontainer .container-sub .rightbox .itemdemo{ /* 상품 정보*/
+    display: flex;
+    gap: 30px;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.detailcontainer .container-sub .rightbox .itemdemo ul{
+    margin: 20px 0 20px 0;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul li{
+    padding: 5px;
+    font-size: 14px;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul .gray-text{
+    color: #666;
+}
+
+.detailcontainer .container-sub .rightbox .paybuy{ /* 수량 조절 버튼 */
+    padding: 20px 0 20px 0;
+    display: flex;
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.detailcontainer .container-sub .rightbox .paybuy .pin-box{ /*플러스 마이너스*/
+    display: flex;
+    margin: 0 0 0 10px;
+    width: 120px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    background-color: #fafafa;
+}
+.detailcontainer .container-sub .rightbox .paybuy .pin-box button{
+    width: 35px;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.detailcontainer .container-sub .rightbox .total-price-area{ /* 총가격 금액 */
+    padding: 20px 0 30px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.detailcontainer .container-sub .rightbox .total-price-area .total-label{
+    font-size: 14px;
+}
+
+.detailcontainer .container-sub .rightbox .total-price-area .total-amount{
+    font-size: 18px;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn{ 
+    /* 장바구니 선물하기 페이 버튼 영역*/
+    background-color: lightcoral;
+    align-items: center;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn button{
+    margin: 0 10px 0 0;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn button a{
+    text-decoration: none;
+}

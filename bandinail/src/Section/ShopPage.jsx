@@ -72,7 +72,7 @@ export default function ShopPage({Datalist, FilterData}){
                 <ul>
                     {currentItems.map((item)=>(
                         <li key={item.id}>
-                            <Link to={`/${item.id}`}>
+                            <Link to={`/DetailPage/${item.id}`}>
                                 <div className="catebox">
                                     {/* 상품 썸네일 */}
                                     <img src={`bandi_img/${item.title}.jpg`} alt={item.name} />
