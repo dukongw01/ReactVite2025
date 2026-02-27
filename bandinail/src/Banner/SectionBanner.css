@@ -19,6 +19,7 @@
     font-size: 30px;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 .MSlideContainer .btnbar .btnbar02 .sdNext{
     position: absolute;
@@ -27,6 +28,7 @@
     font-size: 30px;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .MSlideContainer .btnbar .Tap_btn02{

@@ -79,17 +79,15 @@ export default function DetailPage({nailDataList}){
                         <ul>
                             <li>
                                 {/* 원가 */}
-                                <strong className="findItem-price">{findItem.price.toLocaleString('ko-KR')}원</strong>
+                                <p className={`find-price ${findItem.sale ? 'is-sale' : 'is-normal'}`}> <strong> {findItem.price.toLocaleString('ko')}원</strong></p>
                                 {/* 할인가 */}
-                                {findItem.sale && (
-                                    <p>
-                                        <strong>
+                                <p>{findItem.sale && (
+                                        <strong className="findItem-price">
                                             {(findItem.price * (1 - parseInt(findItem.sale) / 100)).toLocaleString('ko-KR')}원
                                             {/* 퍼센트 */}
                                             <span className="findItem-sale-percent">{findItem.sale}</span>
                                         </strong>
-                                    </p>
-                                )}
+                                )} </p>
                             </li>
                             <li className="gray-text"><p>위미인터내셔널(주)</p></li>
                             <li className="gray-text"><p>대한민국</p></li>
@@ -114,19 +112,20 @@ export default function DetailPage({nailDataList}){
                         </div>
                     </div>
                     <div className="paytype-btn">
-                        <button><Link to='/Cart'>바로구매</Link></button>
-                        <button><Link to='/Cart'>장바구니</Link></button>
-                        <button><Link to='/LoginPage'><img src={like} alt="like" /></Link></button>
-                        <button><Link to='/LoginPage'>선물하기</Link></button>
-                        <div className="subpaybtn">
-                            <button>네이버</button>
-                            <button>카카오</button>
-                        </div>
+                        <button className="buybtn"><Link to='/Cart'>바로구매</Link></button>
+                        <button className="cartbtn"><Link to='/Cart'>장바구니</Link></button>
+                        <button className="giftbtn"><Link to='/LoginPage'>선물하기</Link></button>
+                        <button className="likebtn"><Link to='/LoginPage'><img src={like} alt="like" /></Link></button>
+                    </div>
+                    <div className="subpaybtn">
+                        <p className="blur-text">비회원 구매</p>
+                        <button className="naverbtn">ⓝPAY 구매</button>
+                        <button className="kakaobtn">KAKAO PAY</button>
                     </div>
                 </div>
             </div>
-            <p>상품 상세정보</p>
             <div className="bigimgbox">
+                <h5>상품 상세정보</h5>
                 <img src={detailimg} alt="detailimg" />
             </div>
         </div>

@@ -39,6 +39,29 @@
     padding: 5px;
     font-size: 14px;
 }
+.detailcontainer .container-sub .rightbox .itemdemo ul li{
+    display: flex;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul li .find-price.is-sale{ /*할인 적용 원가*/
+    font-weight: 500;
+    color: #a0a0a0;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul li .find-price.is-normal{ /*할인 적용 원가*/
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul li .findItem-price{/* 할인가 */
+    margin: 0 0 0 5px;
+    color: #333;
+    font-weight: 600;
+}
+.detailcontainer .container-sub .rightbox .itemdemo ul li .findItem-sale-percent{/*퍼센트*/
+    color: #ff3223cc;
+    margin: 0 0 0 5px;
+}
 .detailcontainer .container-sub .rightbox .itemdemo ul .gray-text{
     color: #666;
 }
@@ -89,18 +112,122 @@
 
 .detailcontainer .container-sub .rightbox .paytype-btn{ 
     /* 장바구니 선물하기 페이 버튼 영역*/
-    background-color: lightcoral;
+    display: flex;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .buybtn{ /*바로 구매*/
+    margin: 0 5px 0 0;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #222;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .buybtn a{
+    text-decoration: none;
+    color: #ececec;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .cartbtn{ /*장바구니*/
+    margin: 0 5px 0 0;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #222;
+    background-color: #f7f7f7ee;
+}
+.detailcontainer .container-sub .rightbox .paytype-btn .cartbtn a{
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .giftbtn{ /*선물하기*/
+    margin: 0 5px 0 0;
+    width: 135px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #f7f7f7ee;
+}
+.detailcontainer .container-sub .rightbox .paytype-btn .giftbtn a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .likebtn{ /*선물하기*/
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+}
+
+.detailcontainer .container-sub .rightbox .paytype-btn .likebtn a{
+    display: flex;
+    text-decoration: none;
+}
+.detailcontainer .container-sub .rightbox .paytype-btn .likebtn img{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.detailcontainer .container-sub .rightbox .subpaybtn{ /* 네이버 카카오*/
+    display: flex;
+    margin: 10px 0;
+    justify-content: end;
+    gap: 5px;
+}
+.detailcontainer .container-sub .rightbox .subpaybtn .blur-text{
+    display: flex;
+    font-size: 13px;
+    color: #666;
     align-items: center;
 }
 
-.detailcontainer .container-sub .rightbox .paytype-btn button{
-    margin: 0 10px 0 0;
-    text-decoration: none;
-    width: 100px;
-    height: 40px;
+.detailcontainer .container-sub .rightbox .subpaybtn .naverbtn{
+    width: 150px;
+    height: 35px;
     border-radius: 5px;
+    border: none;
+    color: #222;
+    font-weight: bold;
+    background-color: #35d858;
 }
 
-.detailcontainer .container-sub .rightbox .paytype-btn button a{
-    text-decoration: none;
+.detailcontainer .container-sub .rightbox .subpaybtn .kakaobtn{
+    margin: 0 54px 0 0;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    color: #222;
+    font-weight: bold;
+    background-color: #eeea10;
+}
+
+.detailcontainer .bigimgbox{ /* 상품 상세 페이지 영역*/
+    margin: 0 auto;
+    width: 1400px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.detailcontainer .bigimgbox h5{
+    margin: 50px 0;
+    padding: 25px 0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }

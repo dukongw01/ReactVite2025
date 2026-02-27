@@ -12,6 +12,7 @@ import MainPage from './Section/MainPage'
 import NailFilter from './Section/NailFilter';
 import NailList from './Detail/NailList';
 import DetailPage from './Section/DetailPage'
+import ScrollToTop from './Section/ScrollTop'
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <HeaderPage/>
         <Routes>
           <Route path='/' element={<MainPage nailDataList={nailData}/>}/>
