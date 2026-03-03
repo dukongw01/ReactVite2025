@@ -23,13 +23,15 @@ export default function HeaderPage() {
                                     <li><Link to='/BrandStory'>브랜드 스토리</Link></li>
                                     <li><Link to='/Branches'>전국지사</Link></li>
                                     <li><Link to='/OpenSalon'>오픈살롱</Link></li>
+                                    <li><Link to='/InHouse'>인 하우스</Link></li>
+                                    <li><Link to='/Cureix'>큐릭스</Link></li>
                                 </ul>
                             )}
                         </li>
                         
                         <li><Link to='/NailFilter' className="main-link">PRODUCT</Link></li>
                         <li><Link to='/GshpPage' className="main-link">FRANCHISE</Link></li>
-                        <li><Link to='/AcademyPage' className="main-link">ACADEMY</Link></li>
+                        <li><Link to='/LoginPage' className="main-link">ACADEMY</Link></li>
                         <li><Link to='/EventPage' className="main-link">EVENT</Link></li>
                         
                         {/* COMMUNITY */}
@@ -40,8 +42,8 @@ export default function HeaderPage() {
                             {hidemenu === 'community' && (
                                 <ul className="dropnavi">
                                     <li><Link to='/Notice'>공지사항</Link></li>
-                                    <li><Link to='/QnA'>문의답변</Link></li>
-                                    <li><Link to='/Membership'>멤버십</Link></li>
+                                    <li><Link to='/LoginPage'>문의답변</Link></li>
+                                    <li><Link to='/MemberShipPage'>멤버십</Link></li>
                                 </ul>
                             )}
                         </li>

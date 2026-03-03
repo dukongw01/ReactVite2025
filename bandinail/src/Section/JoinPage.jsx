@@ -1,78 +1,97 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import joinimg from '../../public/bandi_img/joinimg.jpg';
+import './JoinPage.css';
 
-export default function JoinPage(){
+export default function JoinPage() {
 
-    return(
-        <div>
-                <img src={joinimg} alt="join" />
-            {/* 회원 가입 테이블 */}
-            <h1>회원가입</h1>
-            <table>
-                <tbody>
-                    <h2>기본정보</h2>
-                    <tr>
-                        <th>아이디</th>
-                        <td>
-                            <input type="text" placeholder="ID입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호</th>
-                        <td>
-                            <input type="password" placeholder="PW입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>비밀번호 확인</th>
-                        <td>
-                            <input type="password" placeholder="PW재입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>성함</th>
-                        <td>
-                            <input type="text" placeholder="이름 입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>주소</th>
-                        <td>
-                            <input type="text" placeholder="주소 입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>연락처</th>
-                        <td>
-                            <input type="tel" placeholder="번호 입력" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>이메일</th>
-                        <td>
-                            <input type="email" placeholder="메일 입력" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+  // 체크박스 상태를 관리
+    const [agreements, setAgreements] = useState({
+        terms: false,    // 이용약관 (필수)
+        sms: false,      // SMS 수신 (선택)
+        email: false     // 이메일 수신 (선택)
+    });
 
-            {/* 동의 테이블 */}
+    // 전체 동의 체크
+    const handleAllCheck = (e) => {
+        const { checked } = e.target;
+        setAgreements({
+            terms: checked,
+            sms: checked,
+            email: checked
+        });
+    };
 
-            <h1>이용약관</h1>
-            <table>
-                <tbody>
-                    <h2>이용약관</h2>
-                    <tr>
-                        <th>
-                            <input type="checkbox" /> 이용약관 및 개인정보수집 및 쇼핑정보 수신에 모두 동의합니다.
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>이용약관</td>
-                        <td>
-                            <div className="text-round">
-                                <p>** 해당 서식은 공정거래위원회에서 제공하는 전자상거래 표준 약관으로 쇼핑몰 운영형태에 따른 수정이 필요할 수 있습니다. 쇼핑몰에 적용하시기 전 쇼핑몰 운영 사항 등을 확인하시고 관련 법령 등을 감안하여 적절한 내용을 반영하여 이용하시기 바랍니다. **
+    // 개별 체크
+    const handleSingleCheck = (e) => {
+        const { name, checked } = e.target;
+        setAgreements(prev => ({
+            ...prev,
+            [name]: checked
+        }));
+    };
+
+    // 모든 항목 체크 확인 동기화
+    const isAllChecked = Object.values(agreements).every(value => value === true);
+
+
+    return (
+        <div className="join-container">
+            <div className="join-header">
+                <img src={joinimg} alt="join" className="join-banner" />
+                <h1>회원가입</h1>
+            </div>
+            <section className="info-section">
+                <h2>기본정보</h2>
+                <table className="join-table">
+                    <tbody>
+                        <tr>
+                            <th>아이디</th>
+                            <td><input type="text" placeholder="ID입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td><input type="password" placeholder="PW입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호 확인</th>
+                            <td><input type="password" placeholder="PW재입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>성함</th>
+                            <td><input type="text" placeholder="이름 입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td><input type="text" placeholder="주소 입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>연락처</th>
+                            <td><input type="tel" placeholder="번호 입력" /></td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td><input type="email" placeholder="메일 입력" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section className="terms-section">
+                <h2>이용약관</h2>
+                <div className="all-agree">
+                    <label>
+                        <input type="checkbox" checked={isAllChecked} onChange={handleAllCheck} /> 이용약관, 개인정보수집 및 쇼핑정보 수신에 모두 동의합니다.
+                    </label>
+                </div>
+
+                <table className="terms-table">
+                    <tbody>
+                        <tr>
+                            <th>이용약관</th>
+                            <td>
+                                <div className="text-round">
+                                    <p><textarea name="" id="">** 해당 서식은 공정거래위원회에서 제공하는 전자상거래 표준 약관으로 쇼핑몰 운영형태에 따른 수정이 필요할 수 있습니다. 쇼핑몰에 적용하시기 전 쇼핑몰 운영 사항 등을 확인하시고 관련 법령 등을 감안하여 적절한 내용을 반영하여 이용하시기 바랍니다. **
  
 제1조(목적)
 이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다.
@@ -314,41 +333,36 @@ export default function JoinPage(){
 제24조(재판권 및 준거법)
   ① “몰”과 이용자 간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.
   ② “몰”과 이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
+부 칙(시행일) 이 약관은 년 월 일부터 시행합니다.</textarea></p>
+                                </div>
+                                <label className="agree-check">
+                                    [필수] 이용약관 동의 <input type="checkbox" name="terms" checked={agreements.terms} onChange={handleSingleCheck}/>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>쇼핑정보 수신</th>
+                            <td>
+                                <div className="text-round">
+                                    <p>할인쿠폰 및 혜택, 이벤트 소식 등을 받아보실 수 있습니다.</p>
+                                </div>
+                                <div className="marketing-checks">
+                                    <label>
+                                        [선택] SMS 수신 <input type="checkbox" name="sms" checked={agreements.sms} onChange={handleSingleCheck} />
+                                    </label>
+                                    <label>
+                                        [선택] 이메일 수신 <input type="checkbox" name="email" checked={agreements.email} onChange={handleSingleCheck} />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-
-부 칙(시행일) 이 약관은 년 월 일부터 시행합니다.</p>
-                            </div>
-                        </td>
-                        <td>
-                            [필수] 이용약관 <input type="checkbox" /> 동의
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>쇼핑정보 수신</td>
-                        <td>
-                            <div className="text-round">
-                                <p>할인쿠폰 및 혜택, 이벤트, 신상품 소식 등 쇼핑몰에서 제공하는 유익한 쇼핑정보를 SMS나 이메일로 받아보실 수 있습니다.
-
-단, 주문/거래 정보 및 주요 정책과 관련된 내용은 수신동의 여부와 관계없이 발송됩니다.
-
-선택 약관에 동의하지 않으셔도 회원가입은 가능하며, 회원가입 후 회원정보수정 페이지에서 언제든지 수신여부를 변경하실 수 있습니다.</p>
-                            </div>
-                        </td>
-                        <td>
-                            [선택] 쇼핑정보 수신 <input type="checkbox" /> 동의
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            이메일을 수신하시겠습니까? <input type="checkbox" /> 동의
-                        </td>
-                    </tr>
-                    <tr>
-                        <button type="button">회원가입</button>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div className="join-button-area">
+                <button type="submit" className="join-submit-btn">회원가입</button>
+            </div>
         </div>
-    )
+    );
 }

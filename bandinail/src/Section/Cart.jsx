@@ -5,8 +5,8 @@ export default function Cart(){
 
     
     //장바구니 목록
-    const [cartIn, setCartIn] = useState(()=>{
-        const saved = localStorage.getItem('cartIn');
+    const [cartlist, setCartList] = useState(()=>{
+        const saved = localStorage.getItem('cartlist');
         console.log("cart", saved);
         return saved ? JSON.parse(saved):[];
     });
@@ -24,7 +24,7 @@ export default function Cart(){
     //전체 선택 및 해제
     const handleAllCheck = (isChecked) => {
         if (isChecked) {
-            const allIds = cartIn.map((item) => item.id);
+            const allIds = cartlist.map((item) => item.id);
             setCheckedItems(allIds);
         } else {
             setCheckedItems([]);
@@ -39,8 +39,8 @@ export default function Cart(){
         }
 
         if (window.confirm("선택 상품을 삭제하시겠습니까?")) {
-            const updatedList = cartIn.filter((item) => !checkedItems.includes(item.id));
-            setCartIn(updatedList);
+            const updatedList = cartlist.filter((item) => !checkedItems.includes(item.id));
+            setCartList(updatedList);
             setCheckedItems([]); // 삭제 후 체크 상태 초기화
         }
     };
@@ -50,56 +50,56 @@ export default function Cart(){
 
     //장바구니 변경마다 localStorag 저장
     useEffect(()=>{
-        localStorage.setItem('cartIn', JSON.stringify(cartIn));
-    },[cartIn])
+        localStorage.setItem('cartlist', JSON.stringify(cartlist));
+    },[cartlist])
 
 
     //장바구니 전체 삭제
     const cartClear = () => {
-        setCartIn([]); //상태 초기화
-        localStorage.removeItem('cartIn');
+        setCartList([]); //상태 초기화
+        localStorage.removeItem('cartlist');
     };
 
     //상품 개별 삭제
     const itemClear = (id) => {
         if (alert.confirm("장바구니를 비우시겠습니까?"))
-            { setCartIn([]); }};
+            { setCartList([]); }};
 
     //합계
-    const cartInCopy = [...cartIn];
+    const cartlistCopy = [...cartlist];
     //수량 증가
     const plusbtn = (id) => {
-        const findPlus = cartInCopy.find((cartItem) => cartItem.id === id)
+        const findPlus = cartlistCopy.find((cartItem) => cartItem.id === id)
         console.log(findPlus+"수량 증가");
         if(findPlus !== undefined){
             findPlus.count += 1;
-            setCartIn(cartInCopy)
+            setCartList(cartlistCopy)
         };
     };
 
     //수량 감소
     const minusbtn = (id) => {
-        const findMinus = cartInCopy.find((cartItem)=>cartItem.id === id)
+        const findMinus = cartlistCopy.find((cartItem)=>cartItem.id === id)
         console.log(findMinus+"수량 감소")
         if(findMinus !== undefined && findMinus.count >1){
             findMinus.count=findMinus.count -1;
-            setCartIn(cartInCopy)
+            setCartList(cartlistCopy)
         }
     }
 
     //수량 변경
     const updateCount = (id, amount) => {
-        setCartIn( cartIn.map((item) =>
+        setCartList( cartlist.map((item) =>
             item.id === id ? { ...item, count: Math.max(1, item.count + amount) }: item)
     );};
 
     //가격 총계
     useEffect(()=>{
         let totalPrice = 0;
-        for(let i=0; i<cartIn.length; i++){
-            totalPrice += cartIn[i].price * cartIn[i].count;
+        for(let i=0; i<cartlist.length; i++){
+            totalPrice += cartlist[i].price * cartlist[i].count;
         } setCartTotal(totalPrice);
-    },[cartIn])
+    },[cartlist])
 
 
 
@@ -114,7 +114,7 @@ export default function Cart(){
                 {/* 삭제버튼 선택 및 전체 */}
                 <div className="cart-controls">
                     <button onClick={deleteChecked}>선택 삭제</button>
-                    <button onClick={() => setCartIn([])}>전체 삭제</button>
+                    <button onClick={() => setCartList([])}>전체 삭제</button>
                 </div>
                 {/* 테이블 영역 */}
                 <table>
@@ -123,7 +123,7 @@ export default function Cart(){
                             <th>
                                 <input type="checkbox" 
                                     onChange={(e) => handleAllCheck(e.target.checked)}
-                                    checked={checkedItems.length === cartIn.length && cartIn.length > 0}/>
+                                    checked={checkedItems.length === cartlist.length && cartlist.length > 0}/>
                                 전체선택
                             </th>
                             <th>상품명</th>
@@ -134,7 +134,7 @@ export default function Cart(){
                         </tr>
                     </thead>
                     <tbody>
-                        {cartIn.map((item) => (
+                        {cartlist.map((item) => (
                             <tr key={item.id}>
                                 <td>
                                     <input type="checkbox" 

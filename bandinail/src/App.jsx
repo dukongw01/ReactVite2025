@@ -13,6 +13,12 @@ import NailFilter from './Section/NailFilter';
 import NailList from './Detail/NailList';
 import DetailPage from './Section/DetailPage'
 import ScrollToTop from './Section/ScrollTop'
+import BrandStory from './Section/BrandStory'
+import Branches from './Section/Branches'
+import OpenSalon from './Section/OpenSalon'
+import InHouse from './Section/InHouse'
+import Cureix from './Section/Cureix'
+import MemberShipPage from './Section/MemberShipPage'
 
 function App() {
   
@@ -27,6 +33,14 @@ function App() {
         <ScrollToTop />
         <HeaderPage/>
         <Routes>
+          {/* About us 영역 */}
+          <Route path='/BrandStory' element={<BrandStory/>}/>
+          <Route path='/Branches' element={<Branches/>}/>
+          <Route path='/OpenSalon' element={<OpenSalon/>}/>
+          <Route path='/InHouse' element={<InHouse/>}/>
+          <Route path='/Cureix' element={<Cureix/>}/>
+          <Route path='/MemberShipPage' element={<MemberShipPage/>}/>
+          {/* Product 영역 */}
           <Route path='/' element={<MainPage nailDataList={nailData}/>}/>
           <Route path='/NailFilter' element={<NailFilter nailDataList={nailData} />}/>
           <Route path='/LoginPage' element={<LoginPage/>}/>

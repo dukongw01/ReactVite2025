@@ -33,10 +33,10 @@ export default function FooterPage(){
                         <li><p>월-금 09:00~18:00 | 점심시간 12:30~13:30 | 토.일.공휴일 휴무</p></li>
                         <li>
                             <div className="sns-box">
-                                <img src='./bandi_img/youtube.png' alt="SNSicon" />
-                                <img src='./bandi_img/twitter.png' alt="SNSicon02" />
-                                <img src='./bandi_img/kakaotalk.png' alt="SNSicon03" />
-                                <img src='./bandi_img/instagram.png' alt="SNSicon04" />
+                                <img src='./bandi_img/youtube.png' alt="SNSicon" className="sns01"/>
+                                <img src='./bandi_img/twitter.png' alt="SNSicon02" className="sns02"/>
+                                <img src='./bandi_img/kakaotalk.png' alt="SNSicon03" className="sns03"/>
+                                <img src='./bandi_img/instagram.png' alt="SNSicon04" className="sns04"/>
                             </div>
                         </li>
                     </ul>

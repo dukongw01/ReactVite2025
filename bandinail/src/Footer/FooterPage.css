@@ -56,11 +56,31 @@
     font-size: 12px;
 }
 
-.FTcontainer .footer-box .right-box ul li .sns-box img{ /*sns 이미지*/
+.FTcontainer .footer-box .right-box ul li .sns-box .sns01{ /*sns 이미지*/
     width: 25px;
     height: 25px;
-    margin-top: 5px;
+    margin: 5px 10px 0 0;
     opacity: 60%;
-    padding-right: 10px;
+    cursor: pointer;
+}
+.FTcontainer .footer-box .right-box ul li .sns-box .sns02{ /*sns 이미지*/
+    width: 25px;
+    height: 25px;
+    margin: 5px 10px 0 0;
+    opacity: 60%;
+    cursor: pointer;
+}
+.FTcontainer .footer-box .right-box ul li .sns-box .sns03{ /*sns 이미지*/
+    width: 25px;
+    height: 25px;
+    margin: 5px 10px 0 0;
+    opacity: 60%;
+    cursor: pointer;
+}
+.FTcontainer .footer-box .right-box ul li .sns-box .sns04{ /*sns 이미지*/
+    width: 25px;
+    height: 25px;
+    margin: 5px 10px 0 0;
+    opacity: 60%;
     cursor: pointer;
 }

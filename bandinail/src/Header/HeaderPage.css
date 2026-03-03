@@ -116,6 +116,7 @@ a { text-decoration: none; color: inherit; }
     align-items: center;
     border-bottom: 1px solid #888; /* 기존 보더 컬러 */
     padding-bottom: 2px;
+    cursor: pointer;
 }
 
 .search-bar input {
