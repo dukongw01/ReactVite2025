@@ -15,12 +15,30 @@ export default function MainPage({nailDataList}){
     
     // 장바구니
     const cartBtn = (item) => {
+    // 기존 장바구니 데이터
+    const savedCart = localStorage.getItem('cartList');
+    let cartList = savedCart ? JSON.parse(savedCart) : [];
+
+    // 장바구니에 있는 상품 확인
+    const existingItemIndex = cartList.findIndex(cartItem => cartItem.id === item.id);
+    if (existingItemIndex > -1) {
+        // 수량만 증가
+        cartList[existingItemIndex].count += 1;
+    } else {
+        // 없다면 추가
+        cartList.push({ ...item, count: 1 });
+    }
+    // localStorage 저장
+        localStorage.setItem('cartList', JSON.stringify(cartList));
+    // HeaderPage 변화
+        window.dispatchEvent(new Event('cartUpdate'));
         alert(`${item.name} 상품이 장바구니에 담겼습니다.`);
-        console.log("담긴 상품:", item);
     };
 
     //세일 데이터
     const saleItems = nailDataList.filter(item => item.sale).slice(4,8);
+
+
 
     return(
 

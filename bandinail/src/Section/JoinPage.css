@@ -139,7 +139,7 @@
 .join-submit-btn {
     width: 250px;
     height: 55px;
-    background-color: #333;
+    background-color: #0369a1;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -149,5 +149,5 @@
 }
 
 .join-submit-btn:hover {
-    background-color: #000;
+    background-color: #075985;
 }

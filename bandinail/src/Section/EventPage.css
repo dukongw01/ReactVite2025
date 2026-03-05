@@ -1,0 +1,119 @@
+
+.event-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+
+.event-container .mall-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.event-container .mall-header h2 {
+  font-size: 30px;
+  color: #0369a1;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.event-container .mall-header p {
+  font-size: 14px;
+  color: #888;
+}
+
+
+.event-container .event-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+
+.event-container .event-table thead tr th {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.event-container .event-table tbody tr {
+  cursor: pointer;
+}
+
+
+
+.event-container .event-table tbody tr td {
+  padding: 10px 10px;
+  background-color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+  font-size: 12px;
+  color: #999;
+}
+
+/* 게시글 번호, 제목, 날짜, 상태 */
+.event-container .event-table tbody tr td:first-child { 
+  border-radius: 12px 0 0 12px; 
+  border-left: 1px solid #f9f9f9; 
+}
+
+.event-container .event-table tbody tr td:last-child { 
+  border-radius: 0 12px 12px 0; 
+  border-right: 1px solid #f9f9f9; 
+}
+
+.event-container .event-table tbody tr td.event-title-cell {
+  text-align: left;
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+}
+.event-container .event-table tbody tr td.event-title-cell:hover{
+  font-weight: bold;
+}
+
+.event-container .event-table tbody tr td.date-cell {
+  color: #999;
+  font-size: 14px;
+}
+
+
+.event-container .event-table tbody tr td .status-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 상태 색상 .status-badge */
+
+/* 진행중 */
+.event-container .event-table tbody tr td .status-badge.진행중 { 
+  background-color: #e0f2fe; 
+  color: #0284c7; 
+}
+/* 마감임박 */
+.event-container .event-table tbody tr td .status-badge.마감임박 { 
+  background-color: #dbeafe; 
+  color: #1e40af; 
+  border: 1px solid #bfdbfe;
+}
+/* 예정 */
+.event-container .event-table tbody tr td .status-badge.예정 { 
+  background-color: #f1f5f9; 
+  color: #64748b; 
+}
+/* 종료 */
+.event-container .event-table tbody tr td .status-badge.종료 { 
+  background-color: #f8fafc; 
+  color: #cbd5e1; 
+  text-decoration: line-through; 
+}

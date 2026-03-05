@@ -3,7 +3,33 @@ import { Link } from "react-router-dom";
 import './HeaderPage.css';
 
 export default function HeaderPage() {
+    
     const [hidemenu, setHidemenu] = useState(null);
+    const [cartCount, setCartCount] = useState(0);
+
+    const updateCartCount = () => {
+        const saved = localStorage.getItem('cartList');
+        if (saved) {
+            const cartList = JSON.parse(saved);
+            // item.count가 유효한 숫자인지 확인하며 합산
+            const total = cartList.reduce((sum, item) => sum + (Number(item.count) || 0), 0);
+            setCartCount(total);
+        } else {
+            setCartCount(0);
+        }
+    };
+
+    useEffect(() => {
+        updateCartCount(); // 초기 로드 시 실행
+        // 커스텀 이벤트 및 스토리지 이벤트 리스너 등록
+        window.addEventListener('cartUpdate', updateCartCount);
+        window.addEventListener('storage', updateCartCount);
+        return () => {
+            window.removeEventListener('cartUpdate', updateCartCount);
+            window.removeEventListener('storage', updateCartCount);
+        };
+    }, []);
+
 
     return (
         <div className="header-container">
@@ -30,7 +56,7 @@ export default function HeaderPage() {
                         </li>
                         
                         <li><Link to='/NailFilter' className="main-link">PRODUCT</Link></li>
-                        <li><Link to='/GshpPage' className="main-link">FRANCHISE</Link></li>
+                        <li><Link to='/LoginPage' className="main-link">FRANCHISE</Link></li>
                         <li><Link to='/LoginPage' className="main-link">ACADEMY</Link></li>
                         <li><Link to='/EventPage' className="main-link">EVENT</Link></li>
                         
@@ -38,7 +64,7 @@ export default function HeaderPage() {
                         <li className="menu-item"
                             onMouseEnter={() => setHidemenu('community')} 
                             onMouseLeave={() => setHidemenu(null)}>
-                            <Link to='/CommuPage' className="main-link">COMMUNITY</Link>
+                            <Link to='/Notice' className="main-link">COMMUNITY</Link>
                             {hidemenu === 'community' && (
                                 <ul className="dropnavi">
                                     <li><Link to='/Notice'>공지사항</Link></li>
@@ -57,7 +83,12 @@ export default function HeaderPage() {
                     </div>
                     <ul className="icon-menu">
                         <li><Link to='/LoginPage'><img src='/bandi_img/icon_user.png' alt="user" /></Link></li>
-                        <li><Link to='/Cart'><img src='/bandi_img/cart.png' alt="cart" /></Link></li>
+                        <li className="cart-icon-wrapper">
+                            <Link to='/Cart'>
+                                <img src='/bandi_img/cart.png' alt="cart" />
+                                {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

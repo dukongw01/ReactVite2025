@@ -19,6 +19,8 @@ import OpenSalon from './Section/OpenSalon'
 import InHouse from './Section/InHouse'
 import Cureix from './Section/Cureix'
 import MemberShipPage from './Section/MemberShipPage'
+import EventPage from './Section/EventPage'
+import Notice from './Section/Notice'
 
 function App() {
   
@@ -40,6 +42,8 @@ function App() {
           <Route path='/InHouse' element={<InHouse/>}/>
           <Route path='/Cureix' element={<Cureix/>}/>
           <Route path='/MemberShipPage' element={<MemberShipPage/>}/>
+          <Route path='/EventPage' element={<EventPage/>}/>
+          <Route path='/Notice' element={<Notice/>}/>
           {/* Product 영역 */}
           <Route path='/' element={<MainPage nailDataList={nailData}/>}/>
           <Route path='/NailFilter' element={<NailFilter nailDataList={nailData} />}/>

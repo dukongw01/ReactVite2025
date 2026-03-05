@@ -1,0 +1,107 @@
+
+.notice-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.notice-container .mall-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.notice-container .mall-header h2 {
+  font-size: 30px;
+  color: #334155;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.notice-container .mall-header p {
+  font-size: 14px;
+  color: #888;
+}
+
+
+.notice-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.notice-table thead tr th {
+  padding: 15px;
+  border-bottom: 1px solid #334155;
+  font-size: 14px;
+  color: #768497;
+  font-weight: 600;
+  text-align: center;
+}
+
+.notice-table tbody tr {
+  cursor: pointer;
+}
+
+
+.notice-table tbody tr td {
+  padding: 16px 10px;
+  background-color: #ffffff;
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+.notice-table tbody tr.pinned-row td {
+  background-color: #f8fafc;
+}
+
+.pin-badge {
+  background-color: #334155;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+
+.notice-table tbody tr td:first-child { border-radius: 8px 0 0 8px; border-left: 1px solid #f1f5f9; }
+.notice-table tbody tr td:last-child { border-radius: 0 8px 8px 0; border-right: 1px solid #f1f5f9; }
+
+.notice-title-cell {
+  text-align: left;
+  color: #1e293b;
+  font-weight: 500;
+  width: 50%;
+}
+
+.notice-table tbody tr:hover .notice-title-cell {
+  color: #0369a1 !important;
+  text-decoration: underline;
+}
+
+
+.notice-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 8px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 8px 15px;
+  background-color: #334155;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}

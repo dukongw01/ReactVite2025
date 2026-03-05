@@ -6,12 +6,16 @@ import './ShopPage.css';
 //NailFilter.jsx에서 Datalist와 FilterData를 받아옴
 export default function ShopPage({Datalist, FilterData}){
 
-    //카트 목록
-    const [cartList, setCartList] = useState(()=>{
+    const [cartList, setCartList] = useState(() => {
         const cartsave = localStorage.getItem('cartList');
-        console.log("cart자료", cartsave);
-        return cartsave? JSON.parse(cartsave):[];
+        return cartsave ? JSON.parse(cartsave) : [];
     });
+    
+    //카트 목록
+    useEffect(() => {
+        localStorage.setItem('cartList', JSON.stringify(cartList));
+        window.dispatchEvent(new Event('cartUpdate'));
+    }, [cartList]);
 
 
     //카트 바뀜 localstorage 저장
@@ -21,18 +25,23 @@ export default function ShopPage({Datalist, FilterData}){
 
     //cart 버튼 클릭 핸들러
     const cartBtn = (item) => {
-        const cartListCopy = [...cartList]
-        const findItem = cartList.find((cartItem) => cartItem.id === item.id)
-        //find 결과가 존재하면 아래출력
-        if (findItem === undefined){
-            cartListCopy.push({...item, count:1});
-            alert(`${item.name} 장바구니`)
-        }else{ //같은 상품이미 존재시 출력
-            alert(`${item.name} 장바구니`)
-            findItem.count += 1;
-        }
-        setCartList(cartListCopy)
-    }
+        setCartList(prevList => {
+            const findItem = prevList.find((cartItem) => cartItem.id === item.id);
+            if (!findItem) {
+                alert(`${item.name} 장바구니에 담겼습니다.`);
+                return [...prevList, { ...item, count: 1 }];
+            } else {
+                alert(`${item.name} 수량이 1개 추가되었습니다.`);
+                return prevList.map(cartItem => 
+                    cartItem.id === item.id 
+                    ? { ...cartItem, count: cartItem.count + 1 } 
+                    : cartItem
+                );
+            }
+        });
+    };
+
+    
 
 
     const findItemFilter = Datalist.filter((item)=>item.type === FilterData);

@@ -5,6 +5,8 @@
     color: #333;
 }
 .category-container .top-category{
+    margin-top: 80px;
+    margin-bottom: 70px;
     display: flex;
 }
 .category-container .top-category ul{ /* 상단 버튼 */
@@ -80,7 +82,7 @@
 .category-container .side-cp .side-category .side-colorchip ul{ /*컬러칩*/
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 3px;
 }
 .category-container .side-cp .side-category .side-colorchip ul li{
     width: 25px;

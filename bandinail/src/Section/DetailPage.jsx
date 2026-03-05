@@ -26,27 +26,27 @@ export default function DetailPage({nailDataList}){
     const likefull = ()=> setLikeit('♥');
 
     //장바구니
-    const [cartIn, setCartIn] = useState(()=>{
-        const saved = localStorage.getItem('cartIn');
+    const [cartList, setCartList] = useState(()=>{
+        const saved = localStorage.getItem('cartList');
         return saved ? JSON.parse(saved):[];
     });
 
     //localStorag 저장
     useEffect(()=>{
-        localStorage.setItem('cartIn', JSON.stringify(cartIn));
-    },[cartIn])
+        localStorage.setItem('cartList', JSON.stringify(cartList));
+    },[cartList])
 
     //담긴 모달
     const cartModal = (item)=>{
-        const cartInCopy = [...cartIn];
-        const findItem = cartIn.find((cartItem)=>cartItem.id === item.id);
+        const cartListCopy = [...cartList];
+        const findItem = cartList.find((cartItem)=>cartItem.id === item.id);
         if(findItem === undefined){
-            cartInCopy.push({...item, count:count});
+            cartListCopy.push({...item, count:count});
             alert(`${item.name} 장바구니 담김`);
         }else{
             alert(`${item.name} 담긴 수량 추가`);
             findItem.count += count;}
-        setCartIn(cartInCopy);
+        setCartList(cartListCopy);
     }
 
     // 구매시 가격 할인 적용

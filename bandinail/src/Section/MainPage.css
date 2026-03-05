@@ -39,7 +39,9 @@
     text-decoration: none;
     color: #333;
 }
-
+.onebanner a img{
+    width: 100%;
+}
 /* 썸네일 이미지 */
 .main-container .main-middle .main-grup .main-item ul li .catebox img{ 
     width: 350px;
