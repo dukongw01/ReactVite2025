@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function MemberShipPage() {
 
+    //ai로 버튼 생성
     // 마우스 호버
     const [isHovered, setIsHovered] = useState(false);
 

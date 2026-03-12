@@ -3,31 +3,31 @@ import './SectionBanner.css';
 
 export default function SectionBanner(){
     //헤더 배너 MSlide 이미지 접근
-    const MSdItem = [
+    const MSdItem = [ //이미지 경로 데이터
         {id:1, imgname:'bandi_img/banner01.jpg'},
         {id:2, imgname:'bandi_img/banner02.jpg'}
     ];
 
-    //슬라이드 인덱스
-    const [Msd, setMSd] = useState(0);
+    //슬라이드 인덱스 - 이미지 순서 / 인덱스는 1=0번
+    const [Msd, setMSd] = useState(0); //useState는 상태가 변할때마다 렌더링
     //배너 재생
     const [playMsd, setPlayMSd] = useState(true);
     //타이머
-    const Slidetimer = useRef(null);
+    const Slidetimer = useRef(null); //useRef는 상태가 고정렌더링
     const MSlides = MSdItem.length;
     
     //자동 슬라이드
     useEffect(()=>{
         if(playMsd){
-            Slidetimer.current=setInterval(()=>{
+            Slidetimer.current=setInterval(()=>{ //setInterval 지정된 시간 간격마다 코드를 주기적으로 반복
                 setMSd(index=>(index+1)%MSlides);
-            },3000);
+            },3000); //3초마다 index(0, 1 = 2개의 슬라이드 반복 실행)
         }return()=>{
             if(Slidetimer.current){
-                clearInterval(Slidetimer.current);
+                clearInterval(Slidetimer.current); //위에서 설정한 주기적 실행 코드를 중단시킴
             }
         };
-    },[playMsd, MSlides]);
+    },[playMsd, MSlides]); // {},[] 사이 쉼표(,)는 한번만 반복 실행한다는 것
 
     //슬라이드 순서 버튼
     const MsdClick=(index)=>{ setMSd(index); };
@@ -43,9 +43,9 @@ export default function SectionBanner(){
         <div className="MSlideContainer">
             <div className="btnbar">
                 <ul>
-                    {MSdItem.map((item, index) => (
+                    {MSdItem.map((item, index) => ( // 지정 명령.map은 요소를 순회하며 지정된 함수를 적용.
                         // 현재 index가 같으면 'active' 부여
-                        <li key={item.id} className={index === Msd ? "active" : ""}
+                        <li key={item.id} className={index === Msd ? "active" : ""} //map에서 지정한 item의 순서를 하나씩 꺼내서 쓴다.
                             style={{ display: index === Msd ? "block" : "none" }}>
                             <img src={item.imgname} alt={`${item.id}로 이동`} />
                         </li>

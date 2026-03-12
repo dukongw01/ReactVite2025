@@ -28,9 +28,9 @@ export default function MainPage({nailDataList}){
         // 없다면 추가
         cartList.push({ ...item, count: 1 });
     }
-    // localStorage 저장
+    // localStorage 저장 (ai 추출)
         localStorage.setItem('cartList', JSON.stringify(cartList));
-    // HeaderPage 변화
+    // HeaderPage 변화 (ai 추출)
         window.dispatchEvent(new Event('cartUpdate'));
         alert(`${item.name} 상품이 장바구니에 담겼습니다.`);
     };

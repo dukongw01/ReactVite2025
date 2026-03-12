@@ -40,7 +40,10 @@ export default function EventPage(){
                         <td className="event-title-cell">{event.title}</td>
                         <td className="date-cell">{event.date}</td>
                         <td>
+                            {/* 동적 클래스 할당: ${event.status} 부분 */}
+                             {/* event.status의 값(예: 'active', 'pending')에 따라 클래스 이름이 바뀜 */}
                             <span className={`status-badge ${event.status}`}>
+                                {/* event가 있을 때만 status를 출력 : 이벤트 중이다. 아니다. */}
                             {event.status}
                             </span>
                         </td>

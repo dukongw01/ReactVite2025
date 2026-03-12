@@ -5,14 +5,14 @@ import './JoinPage.css';
 
 export default function JoinPage() {
 
-  // 체크박스 상태를 관리
+  // 체크박스 상태를 관리 (ai 추출)
     const [agreements, setAgreements] = useState({
         terms: false,    // 이용약관 (필수)
         sms: false,      // SMS 수신 (선택)
         email: false     // 이메일 수신 (선택)
     });
 
-    // 전체 동의 체크
+    // 전체 동의 체크 (ai에 e.target을 입력해서 추출)
     const handleAllCheck = (e) => {
         const { checked } = e.target;
         setAgreements({
@@ -22,7 +22,7 @@ export default function JoinPage() {
         });
     };
 
-    // 개별 체크
+    // 개별 체크 (ai에 e.target을 입력해서 추출)
     const handleSingleCheck = (e) => {
         const { name, checked } = e.target;
         setAgreements(prev => ({
@@ -31,7 +31,9 @@ export default function JoinPage() {
         }));
     };
 
-    // 모든 항목 체크 확인 동기화
+    // 모든 항목 체크 확인 동기화 (ai 추출)
+    // Object.values(): 이 객체의 값(Value)들만 쏙 뽑아서 배열로 만든다.[true, false, true]이 배열을 가지고 검사를 시작
+    // .every()	=> 모두 true인지 검사 => Object.values 객체를 배열로 변환
     const isAllChecked = Object.values(agreements).every(value => value === true);
 
 

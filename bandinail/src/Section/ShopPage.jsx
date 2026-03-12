@@ -11,9 +11,10 @@ export default function ShopPage({Datalist, FilterData}){
         return cartsave ? JSON.parse(cartsave) : [];
     });
     
-    //카트 목록
-    useEffect(() => {
-        localStorage.setItem('cartList', JSON.stringify(cartList));
+    //카트 목록 //ai가 추가한 함수
+    useEffect(() => { // useEffect라는 훅은 내부의 함수가 바뀔때 실행되는 것이다.
+        localStorage.setItem('cartList', JSON.stringify(cartList)); //.stringify로 객체를 문자열로 변환시키고 localStorage저장 한 아이템을 꺼내씀.
+        //윈도우(브라우저)에 변경 사항을 dispatchEvent 로 알림을 주어 new Event 새로운 이벤트 상황을 실시간으로 변경
         window.dispatchEvent(new Event('cartUpdate'));
     }, [cartList]);
 
@@ -57,19 +58,22 @@ export default function ShopPage({Datalist, FilterData}){
     const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
     const PageBtn = 20; // 한 페이지에 보여줄 개수
 
-    // 페이지 구분
+    // 페이지 구분 (ai에 slice 명령문을 입력하여 함수추출)
     const LastPage = currentPage * PageBtn; // 1페이지 = 20
     const FirstPage = LastPage - PageBtn; // 1페이지 = 0
-    const currentItems = cateTap.slice(FirstPage, LastPage); // 현재 페이지
+    const currentItems = cateTap.slice(FirstPage, LastPage); // 현재 페이지에 특정 데이터만 자르겠다. slice
 
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(cateTap.length / PageBtn); i++) {
-        pageNumbers.push(i);
+        // Math.ceil => 표(페이지) 안에 지정한 데이터의 개수만 담겠다. 예) 한 페이지에 20개의 상품만 노출 시키기
+        //cateTap.length라는 데이터가 담기는 수를 따라 페이지 버튼 1,2,3 ... 등을 생성
+        pageNumbers.push(i); // pageNumbers에 새로운 항목을 뒤에 추가해서 넣는다. i에 지정한 배열(Array)
     }
 
-    // 페이지 1로 리셋
+    // 페이지 1로 리셋 (ai 추출)
     useEffect(() => {
-        setCurrentPage(1);
+        setCurrentPage(1); //현재 페이지 상태를 무조건 1로 만든다.
+        // 필터 조건이 바뀔 때, 현재 보고 있던 페이지를 가장 첫 페이지로 만든다는 뜻.
     }, [FilterData]);
    
 

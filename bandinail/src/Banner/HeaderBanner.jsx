@@ -68,7 +68,9 @@ export default function HeaderBanner(){
                     </button>
                 </div>
                 <div className="Tap_btn02">
-                    {BigSdItem.map((_, index) => (
+                    {/* map 함수가 순회할 때 현재 요소(element)를 의미. 하지만, 사용하지 않겠다는 표현. 데이터 값 자체는 필요 없고 순서(index)만 필요할 때 주로 사용. */}
+                    {BigSdItem.map((_, index) => ( 
+                        // key 형제 요소들 사이에서 특정 항목을 식별하는 데 사용.
                         <button key={index} className={`slideBig${index === bigsd ? "on" : "off"}`}
                         type="button" onClick={() => BsdClick(index)}
                         aria-label={`${index + 1}번째 슬라이드 이동`}>●</button>

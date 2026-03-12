@@ -9,7 +9,8 @@ export default function DetailPage({nailDataList}){
     //상세페이지
 
 
-    const {id} = useParams();
+    const {id} = useParams(); // 변수값(파라미터)을 추출 -> 객체 안에서 id라는 이름 데이터만 뽑아내겠다는 뜻
+    // <Route path="/product/:id" element={<ProductDetail />} /> 처럼 APP.jsx에 담긴 값 데이터 추출
     const findItem = nailDataList.find((item)=> item.id === Number(id))
     console.log(findItem.item);
 
@@ -28,12 +29,12 @@ export default function DetailPage({nailDataList}){
     //장바구니
     const [cartList, setCartList] = useState(()=>{
         const saved = localStorage.getItem('cartList');
-        return saved ? JSON.parse(saved):[];
+        return saved ? JSON.parse(saved):[]; //문자를 숫자열로 변환하려면 .parse
     });
 
     //localStorag 저장
     useEffect(()=>{
-        localStorage.setItem('cartList', JSON.stringify(cartList));
+        localStorage.setItem('cartList', JSON.stringify(cartList)); //.stringify 는 객체를 문자열로 만든다.
     },[cartList])
 
     //담긴 모달
@@ -49,8 +50,10 @@ export default function DetailPage({nailDataList}){
         setCartList(cartListCopy);
     }
 
-    // 구매시 가격 할인 적용
+    // 구매시 가격 할인 적용 (ai추출)
     const discountRate = findItem.sale ? parseInt(findItem.sale) / 100 : 0;
+    // 문자열(String)을 정수(Integer)로 변환한다. 할인율(sale)이 숫자형이 아닌 문자열로 저장된 것을 바꿔준다.
+
     const unitPrice = findItem.sale ? findItem.price * (1 - discountRate) : findItem.price;
 
     //총 합계 + 수량
@@ -63,7 +66,7 @@ export default function DetailPage({nailDataList}){
                 <div className="leftbox">
                     {/* 이미지 크기 영역 */}
                     <div className="imgbox">
-                        <img src={`/bandi_img/${findItem.title}.jpg`} alt={findItem.name} />
+                        <img src={`bandi_img/${findItem.title}.jpg`} alt={findItem.name} />
                     </div>
                 </div>
                 {/* 상품설명영역 */}
@@ -83,6 +86,12 @@ export default function DetailPage({nailDataList}){
                                 {/* 할인가 */}
                                 <p>{findItem.sale && (
                                         <strong className="findItem-price">
+                                            {/* 상품이 20% 할인 중이라면 findItem.sale은 "20"이라는 문자열 */}
+                                            {/* parseInt(findItem.sale): 문자열 "20"을 숫자 20으로 변환 */}
+                                            {/* / 100: 20을 100으로 나누어 0.2 (할인율 20%)를 만든다. */}
+                                            {/* / 100 퍼센트를 소수점으로 변환 */}
+                                            {/* parseInt 할인율을 숫자로 변환 */}
+                                            {/* 1 - 결과 할인하고 남은 실제 결제 비율을 산출 */}
                                             {(findItem.price * (1 - parseInt(findItem.sale) / 100)).toLocaleString('ko-KR')}원
                                             {/* 퍼센트 */}
                                             <span className="findItem-sale-percent">{findItem.sale}</span>

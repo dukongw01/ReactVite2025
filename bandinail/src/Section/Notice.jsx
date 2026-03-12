@@ -1,5 +1,6 @@
 import './Notice.css';
 
+// ai로 생성한 페이지
 export default function Notice() {
   const notices = [
     { id: '공지', title: '[필독] 반디네일 이용 약관 및 개인정보 처리방침 변경 안내', date: '2026.03.01', writer: '관리자', views: 1240, isPinned: true },
