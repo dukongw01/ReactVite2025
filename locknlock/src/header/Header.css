@@ -1,0 +1,7 @@
+.Header-container{ margin: 0; padding: 0;}
+.PPL-bar{ padding: 20px 0 0 20px; display: flex; justify-content: center; background-color: aquamarine;}
+.Header-fit{ margin: 0px; padding: 20px 40px 20px 40px; display: flex; justify-content: space-between; background-color: bisque; }
+.Header-left{}
+.Header-center{}
+.Header-right{}
+.Header-bottom{ display: flex; gap: 20px;}

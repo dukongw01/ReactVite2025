@@ -1,0 +1,5 @@
+.Footer-container{ margin: 0; padding: 20px; background-color: #090f1d; display: flex; justify-content: center; }
+.Footer-fit{ padding: 30px; display: flex; justify-content: space-around; align-items: center; }
+.Footer-left{ padding: 30px; font-size: 12px; color: #eeeeee;}
+.Footer-center{ padding: 30px; font-size: 12px ;color: #eeeeee;}
+.Footer-right{ display: flex; gap: 50px; padding: 30px; font-size: 12px; color: #eeeeee;}

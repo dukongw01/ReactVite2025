@@ -1,0 +1,6 @@
+.main-container{ margin: 30px; background-color: lightcyan;}
+.main-top-fit{ display: flex; justify-content: space-between;}
+.main-slide{}
+.Main-cernter{ width: 600px; background-color: lightpink;}
+.Main-right{ width: 600px; background-color: lightgreen;}
+.mian-bottom{ display: flex; width: 100%; overflow: hidden; }
