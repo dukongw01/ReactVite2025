@@ -68,8 +68,14 @@ export default function Main(){
                         <button type="button" onClick={popStop} className="stopBtn">
                             {playPop ? <img src='./LnL_img/stop.png' alt="stopIcon"/> : <img src='./LnL_img/play.png' alt="playIcon"/>}
                         </button>
-                        <div className="Main-slide-tap-btn"></div>
-                        {}
+                        {/* 슬라이드 순서 버튼 */}
+                        <div className="Main-slide-tap-btn">
+                            {PopslidIMG.map((_, index)=>(
+                                <button key={index} className={`slide${ index === popSlide ? "on":"off" }`}
+                                onClick={()=>popSlideNum(index)}
+                                aria-label={popSlideNum} type="button">●</button>
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <div className="Main-cernter">
