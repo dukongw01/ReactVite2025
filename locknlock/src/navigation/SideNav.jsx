@@ -1,14 +1,14 @@
 export default function SideNav({AllProdList}){
 
-    // 데이터 구조 분해
-    const [ Appliances_Products, Cooking_Products, Kitchen_Products,
-        Outdoor_Products, Storage_Products, Sundries_Products
-    ] = AllProdList;
+    // 프롭스 데이터
+    // const [ Appliances_Products, Cooking_Products, Kitchen_Products,
+    //     Outdoor_Products, Storage_Products, Sundries_Products
+    // ] = AllProdList;
 
     // 데이터 단일 배열
     const flatAllProd = AllProdList.flat();
 
-
+ 
     // 상품 카테고리 - 탭 나누기 등 데이터 필터
     // 카테고리 구분
     const [cateFilter, setCateFilter] = useState();

@@ -19,27 +19,26 @@ import Main from './section/Main';
 import ProductPage from './section/ProductPage';
 // 푸터
 import Footer from './footer/Footer';
+import Login from './section/Login'
 
 
 function App() {
   
   // data 폴더의 Data파일
   const AllProducts= AllProdData();
-  // 데이터 필터를 App에서 관리
-  const [cateFilter, setCateFilter] = useState('');
-  
 
 
   return (
     <>
     <BrowserRouter>
-      <Header categoryFilter={cateFilter} setCategoryFilter={setCateFilter}/>
-      <Navbar setCategoryFilter={setCateFilter} />
-      <SideNav/>
+      <Header />
+      {/* <Navbar/> */}
+      {/* <SideNav/> */}
       <Routes>
           <Route path='/' element={<Main AllProdList={AllProducts}/>}/>
           <Route path='/Main' element={<Main AllProdList={AllProducts}/>}/>
-          <Route path='/ProductPage' element={<ProductPage AllProdList={AllProducts} setCategoryFilter={setCateFilter}/>}/>
+          <Route path='/Login' element={<Login />}/>
+          <Route path='/ProductPage' element={<ProductPage AllProdList={AllProducts}/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

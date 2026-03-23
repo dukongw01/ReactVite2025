@@ -1,11 +1,6 @@
-export default function Navbar({setCategoryFilter}){
+export default function Navbar(){
     
 
-    // App의 상태를 직접 변경
-    const TapFilter = (num) => {
-        const categories = ['', 'Appliances', 'Cooking', 'Kitchen', 'Outdoor', 'Storage', 'Sundries'];
-        setCategoryFilter(categories[num] ?? '')
-    };
 
 
 

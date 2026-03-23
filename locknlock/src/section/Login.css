@@ -1,0 +1,32 @@
+.Login-container{
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+}
+.Login-form-box{
+    margin: 80px auto;
+    padding: 20px;
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+.Login-id-pw{}
+.Login-id-pw-btn{}
+.Find-id-pw ul{
+    display: flex;
+    gap: 10px;
+}
+.Find-id-pw ul li{
+    display: flex;
+    align-items: center;
+}
+.Find-id-pw ul li + li::before { /* 구분선 */
+    content: "";
+    margin-right: 10px;
+    width: 1px;
+    height: 12px;
+    background-color: #ccc;
+}
+.Ez-Login{}
+.Non-Login{}
