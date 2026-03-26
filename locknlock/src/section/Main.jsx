@@ -6,8 +6,9 @@ import banner03 from '../../public/LnL_img/banner03.jpg';
 import banner04 from '../../public/LnL_img/banner04.jpg';
 // 스타일 CSS
 import './Main.css';
+import ProductPage from "./ProductPage";
 
-export default function Main(){
+export default function Main({AllData}){
 
     //슬라이드 이미지 접근
     const PopslidIMG = [

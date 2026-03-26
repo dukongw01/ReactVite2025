@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react"
-import Navbar from "../navigation/Navbar";
 
 
-export default function ProductPage({AllProdList}){
+export default function ProductPage({AllData}){
 
-
-
-    // 데이터 단일 배열
-    const flatAllProd = AllProdList.flat();
 
     //장바구니(카트)
     const [prodList, setProdList] = useState(()=>{
@@ -37,9 +32,6 @@ export default function ProductPage({AllProdList}){
             }
         });
     };
-
-
-
 
 
     // 상품 필터

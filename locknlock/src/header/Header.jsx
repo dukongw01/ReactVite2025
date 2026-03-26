@@ -9,9 +9,9 @@ import './Header.css';
 import Navbar from "../navigation/Navbar";
 
 
-export default function Header({categoryFilter, setCategoryFilter}){
+export default function Header({AllData}){
 
-    // const placeRandom
+
 
     return(
         <div className="Header-container">
@@ -27,10 +27,13 @@ export default function Header({categoryFilter, setCategoryFilter}){
                     </button>
                 </div>
                 <div className='Header-right'>
-                    <img src={user} alt="user.png" />
+                    <Link to='/Login'><img src={user} alt="user.png" /></Link>
                     <img src={like} alt="like.png" />
                     <img src={cart} alt="cart.png" />
                 </div>
+            </div>
+            <div className="Nav-container">
+            <Navbar AllData={AllData}/>
             </div>
         </div>
     )

@@ -1,32 +1,218 @@
-.Login-container{
+/* 기본 초기화 및 컨테이너 */
+.Login-container {
+    padding: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 900px;
     background-color: #f8f8f8;
 }
-.Login-form-box{
+
+.Login-form-box {
     margin: 80px auto;
-    padding: 20px;
+    padding: 40px;
     width: 500px;
     background-color: #ffffff;
     border-radius: 20px;
     border: 1px solid #e6e6e6;
 }
-.Login-id-pw{}
-.Login-id-pw-btn{}
-.Find-id-pw ul{
+
+.Login-form-box h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.Login-form-box p { 
+    color: #3E29FF; 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin-bottom: 30px;
+}
+
+/* 회원 아이디 비번 */
+.Login-id-pw { 
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.Login-id-pw input[type="text"],
+.Login-id-pw input[type="password"] {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.Login-id-pw input:focus {
+    border-color: #3E29FF;
+    outline: none;
+}
+
+.Login-id-pw label {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.Login-id-pw input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3E29FF;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* 본인 인증 영역 */
+.Login-id-pw-btn {
     display: flex;
+    flex-direction: column;
     gap: 10px;
+    margin-bottom: 25px;
 }
-.Find-id-pw ul li{
+
+.Login-id-pw-btn button {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Member-Login {
+    background-color: #3E29FF;
+    color: #fff;
+    border: none;
+}
+
+.Member-Login:hover {
+    background-color: #3120cc;
+}
+
+.Prt-Login {
+    background-color: #fff;
+    color: #3E29FF;
+    border: 1px solid #3E29FF;
+}
+
+.Prt-Login:hover {
+    background-color: #f0efff;
+    border: 1px solid #3E29FF;
+}
+
+/* 아이디 비밀번호 회원가입 */
+.Find-id-pw {
+    margin-bottom: 30px;
+}
+
+.Find-id-pw ul {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+    font-size: 14px;
+    color: #888;
 }
-.Find-id-pw ul li + li::before { /* 구분선 */
+.Find-id-pw ul a{ text-decoration: none; color: #888; }
+.Find-id-pw ul li {
+    cursor: pointer;
+}
+
+.Find-id-pw ul li:hover {
+    text-decoration: underline;
+}
+
+.Find-id-pw ul li + li::before { 
     content: "";
-    margin-right: 10px;
+    margin-right: 15px;
     width: 1px;
     height: 12px;
     background-color: #ccc;
+    display: inline-block;
 }
-.Ez-Login{}
-.Non-Login{}
+
+/* 간편 로그인 */
+.Ez-Login {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.Ez-Login p{ color: #3E29FF;}
+
+.Ez-Login button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid #e6e6e6;
+}
+
+.Ez-Login button img {
+    width: 25px;
+    height: 25px;
+}
+.Ez-Login .naver-btn{ margin-right: 30px;}
+/* .Ez-Login .kakao-btn{ background-color: #fffb12; } */
+
+/* 비회원 주문 조회 */
+.Non-Login {
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #e6e6e6;
+    text-align: center;
+}
+
+.Non-Login h4{
+    color: #888;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.Non-Login input {
+    width: 100%;
+    display: block;
+    height: 45px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.Search-oder {
+    width: 100%;
+    height: 45px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.Search-oder:hover{ background-color: #444; }
+
+.Non-Login p {
+    color: #888 !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    line-height: 1.5;
+    margin: 0;
+}

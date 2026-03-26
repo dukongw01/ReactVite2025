@@ -1,0 +1,97 @@
+
+.Join-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    background-color: #f8f8f8;
+}
+
+.Join-form {
+    margin: 0;
+    padding: 50px 40px;
+    width: 550px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+}
+
+.Join-form h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: bold;
+}
+
+.Join-form > p {
+    color: #3E29FF; 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin-bottom: 30px;
+}
+
+/* 회원가입 박스 */
+.Join-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+/* 통합 법인 카드  */
+.Join-in-p{
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: #f0efff;
+}
+.Join-in-p a > h3{ font-weight: bold; font-size: 16px; }
+
+.Join-in-b {
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+}
+
+.Join-in-b a > h3{ font-weight: bold; font-size: 16px; }
+
+.Join-in-p > span, .Join-in-b > span{ 
+    top: 45px;
+    right: 10px;
+    position: absolute;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Join-box a {
+    display: block;
+    padding: 30px 20px;
+    text-decoration: none;
+}
+
+.Join-in-p:hover{ border-color: #3E29FF; }
+.Join-in-b:hover { border-color: #555; }
+
+.Join-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+
+.Join-box p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.Join-text-strong {
+    margin: 0 auto;
+    width: 340px;
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+    padding-top: 25px;
+}

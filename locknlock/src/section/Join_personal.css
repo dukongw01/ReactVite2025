@@ -1,0 +1,169 @@
+.J-P-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 900px;
+    background-color: #f8f8f8;
+}
+
+.J-P-form {
+    padding: 40px;
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+.J-P-form h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+/* 전체 동의 */
+.J-P-all-check {
+    padding: 5px;
+    background-color: #f8f8f8; 
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.J-P-all-check label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.J-P-all-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: #3E29FF;
+    flex-shrink: 0;
+}
+
+.J-P-all-check strong {
+    color: #333;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.J-P-all-check .gray-text{
+    font-size: 13px;
+    color: #666;
+}
+
+/* 개별 체크박스 */
+.J-P-checkbox{ background-color: #f8f8f8; }
+
+.J-P-checkbox ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.J-P-checkbox li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+}
+
+.J-P-checkbox li:last-child {
+    border-bottom: none;
+    padding-top: 25px;
+}
+
+.J-P-checkbox label {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+.J-P-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #3E29FF;
+}
+
+/* 약관보기 */
+.dldyd {
+    font-size: 13px;
+    color: #999;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.dldyd:hover {
+    color: #666;
+}
+
+/* 본인인증 */
+.J-P-phone {
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    color: #3E29FF;
+    border: 1px solid #3E29FF;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.J-P-phone:hover {
+    background-color: #f0efff;
+}
+
+/* 이전 다음 */
+.J-P-prvnex {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.J-P-prvnex a {
+    flex: 1;
+    text-decoration: none;
+}
+
+.J-P-prvnex button {
+    width: 100%;
+    height: 52px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.J-P-prev {
+    background-color: #f5f5f5;
+    color: #888;
+    border: none;
+}
+
+.J-P-prev:hover {
+    background-color: #e0e0e0;
+}
+
+.J-P-next {
+    flex: 1;
+    background-color: #3E29FF;
+    color: #fff;
+    border: none;
+}
+
+.J-P-next:hover {
+    background-color: #3120cc;
+}
+

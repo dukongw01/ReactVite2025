@@ -1,0 +1,23 @@
+.Navbar-container{ 
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; 
+}
+
+.Nav-box{ display: flex; gap: 30px; }
+
+.Nav-box ul { display: flex; gap: 15px; }
+
+
+.Nav-box ul li button{
+    padding: 0 5px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}

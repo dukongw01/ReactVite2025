@@ -1,0 +1,130 @@
+.J-B-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 900px;
+    background-color: #f8f8f8;
+}
+
+
+.J-B-form {
+    padding: 40px;
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+.J-B-form h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.J-B-form > p { 
+    color: #3E29FF; 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin-bottom: 20px;
+}
+
+
+.J-B-gray-text {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.J-B-gray-text strong {
+    color: #333;
+}
+
+
+.J-B-checkbox ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.J-B-checkbox li {
+    margin-bottom: 20px;
+}
+
+.J-B {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.red-star {
+    color: #ff4d4f;
+    margin-left: 3px;
+}
+
+
+.J-B-checkbox input {
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.J-B-checkbox input:focus {
+    border-color: #3E29FF;
+    outline: none;
+}
+
+/* 이전 다음 */
+.J-B-prvnex {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.J-B-prvnex a {
+    flex: 1;
+}
+
+.J-B-prvnex button {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.J-B-prev {
+    background-color: #f5f5f5;
+    color: #888;
+    border: none;
+}
+
+.J-B-prev:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+.J-B-next {
+    flex: 1;
+    background-color: #3E29FF;
+    color: #fff;
+    border: none;
+}
+
+.J-B-next:hover {
+    background-color: #3120cc;
+}
