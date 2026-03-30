@@ -9,7 +9,7 @@ import './Header.css';
 import Navbar from "../navigation/Navbar";
 
 
-export default function Header({AllData}){
+export default function Header({AllData, setCateFilter}){
 
 
 
@@ -33,7 +33,7 @@ export default function Header({AllData}){
                 </div>
             </div>
             <div className="Nav-container">
-            <Navbar AllData={AllData}/>
+                <Navbar AllData={AllData} setCateFilter={setCateFilter}/>
             </div>
         </div>
     )

@@ -20,6 +20,8 @@ import Join_personal from './section/Join_personal';
 import Join_business from './section/Join_business';
 import Main from './section/Main';
 import ProductPage from './section/ProductPage';
+import DetailProd from './section/DetailProd';
+import Event from './section/Event';
 // 푸터
 import Footer from './footer/Footer';
 
@@ -27,20 +29,24 @@ import Footer from './footer/Footer';
 function App() {
   
   const AllData = AllProductData();
+  const [cateFilter, setCateFilter] = useState('');
 
 
   return (
     <>
     <BrowserRouter>
-      <Header AllData={AllData}/>
+      <Header AllData={AllData} setCateFilter={setCateFilter}/>
       <Routes>
           <Route path='/Login' element={<Login />}/> {/* 로그인 */}
           <Route path='/Join' element={<Join />}/> {/* 회원가입 */}
           <Route path='/Join_personal' element={<Join_personal />}/> {/* 회원가입2 */}
           <Route path='/Join_business' element={<Join_business/>}/> {/* 회원가입3 */}
-          <Route path='/' element={<Main />}/>
+          <Route path='/' element={<Main AllData={AllData}/>}/>
           <Route path='/Main' element={<Main AllData={AllData}/>}/>
-          <Route path='/ProductPage' element={<ProductPage AllData={AllData} />}/>
+          <Route path='/Event' element={<Event/>}/>
+          {/* cateFilter를 ProductPage로 전달 */}
+          <Route path='/ProductPage' element={<ProductPage AllData={AllData} cateFilter={cateFilter} />}/>
+          <Route path='/DetailProd/:id' element={<DetailProd AllData={AllData} />}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

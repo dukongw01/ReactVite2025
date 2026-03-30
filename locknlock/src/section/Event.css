@@ -1,0 +1,28 @@
+.Event-container{}
+.Event-List{
+    margin: 80px auto;
+    width: 1600px;
+    background-color: aquamarine;
+}
+
+.Event-List ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.Event-List ul li{}
+.Event-List ul li img{
+    width: 350px;
+    height: 350px;
+    border-radius: 25px;
+    object-fit: cover;          /* 이미지 비율 유지하며 영역 채우기 */
+    object-position: top;
+}
+
+.Event-List .event-ing{
+    margin: 40px 0 40px 0;
+    border-bottom: 2px solid lightgray;
+}
+
+.eventing-text{}
+.event-grattext{}

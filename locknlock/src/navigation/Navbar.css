@@ -20,4 +20,10 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
+    color: black;
+}
+
+.Nav-box ul li button a{
+    text-decoration: none;
+    color: black;
 }
