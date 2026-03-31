@@ -81,15 +81,21 @@ export default function Main({AllData}){
                         {/* 슬라이드 순서 버튼 */}
                         <div className="Main-slide-tap-btn">
                             {PopslidIMG.map((_, index)=>(
-                                <button key={index} className={`slide${ index === popSlide ? "on":"off" }`}
-                                onClick={()=>popSlideNum(index)}
-                                aria-label={`슬라이드 ${index + 1}`} type="button">●</button>
+                                <button
+                                    key={index}
+                                    className={`slide${index === popSlide ? "on" : "off"}`}
+                                    onClick={() => popSlideNum(index)}
+                                    aria-label={`슬라이드 ${index + 1}`}
+                                    type="button">
+                                    {index === popSlide ? '●' : '○'}
+                                </button>
                             ))}
                         </div>
                     </div>
                 </div>
                 <div className="Main-center">
                     {/* 베스트 아이템 영역 */}
+                    <h1>베스트 아이템</h1>
                     <ul>
                         {bestItems.map((item) => (
                             <li key={item.id}>
@@ -101,15 +107,20 @@ export default function Main({AllData}){
                                     {/* 클릭시 상세페이지 이동 */}
                                     <Link to={`/DetailProd/${item.id}`}>
                                         <p>{item.name}</p>
-                                        <p>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원</p>
+                                        <h5>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원
+                                            <strong>{item.discountRate ? `${item.discountRate}%` : null}</strong>
+                                            <span>☆{item.rating} ({item.reviewCount})</span>
+                                        </h5>
                                     </Link>
                                 </div>
                             </li>
                         ))}
+                        <div className="MoreItem"><Link to={`/ProductPage`}><button> 더보기 →</button></Link></div>
                     </ul>
                 </div>
                 <div className="Main-right">
                     {/* 신상품 영역 */}
+                    <h1>신상품</h1>
                     <ul>
                         {isNewItem.map((item) => (
                             <li key={item.id}>
@@ -121,34 +132,41 @@ export default function Main({AllData}){
                                     {/* 클릭시 상세페이지 이동 */}
                                     <Link to={`/DetailProd/${item.id}`}>
                                         <p>{item.name}</p>
-                                        <p>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원</p>
+                                        <h5>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원
+                                            <strong>{item.discountRate ? `${item.discountRate}%` : null}</strong>
+                                            <span>☆{item.rating} ({item.reviewCount})</span>
+                                        </h5>
                                     </Link>
                                 </div>
                             </li>
                         ))}
+                        <div className="MoreItem"><Link to={`/ProductPage`}><button>더보기 →</button></Link></div>
                     </ul>
                 </div>
             </div>
             <div className="Main-bottom">
-                <div className="banner-box01">
-                    <img src={banner01} alt="banner01" />
-                    <h4>신선함을 높이는 방법</h4>
-                    <p>진공 잠금 시스템을 확인하세요</p>
-                </div>
-                <div className="banner-box02">
-                    <img src={banner02} alt="banner02" />
-                    <h4>신선함을 높이는 방법</h4>
-                    <p>진공 잠금 시스템을 확인하세요</p>
-                </div>
-                <div className="banner-box03">
-                    <img src={banner03} alt="banner03" />
-                    <h4>신선함을 높이는 방법</h4>
-                    <p>진공 잠금 시스템을 확인하세요</p>
-                </div>
-                <div className="banner-box04">
-                    <img src={banner04} alt="banner04" />
-                    <h4>신선함을 높이는 방법</h4>
-                    <p>진공 잠금 시스템을 확인하세요</p>
+                <h1>특별한 아이템</h1>
+                <div className="banner-box00">
+                    <div className="banner-box01">
+                        <img src={banner01} alt="banner01" />
+                        <h4>신선함을 높이는 방법</h4>
+                        <p>진공 잠금 시스템을 확인하세요</p>
+                    </div>
+                    <div className="banner-box02">
+                        <img src={banner02} alt="banner02" />
+                        <h4>든든한 온기를 오래도록</h4>
+                        <p>보온 도시락으로 피크닉 가요</p>
+                    </div>
+                    <div className="banner-box03">
+                        <img src={banner03} alt="banner03" />
+                        <h4>주방에 스타일을 더하다</h4>
+                        <p>기능과 디자인을 한 번에 잡았습니다</p>
+                    </div>
+                    <div className="banner-box04">
+                        <img src={banner04} alt="banner04" />
+                        <h4>우리 아이와 함께 안심</h4>
+                        <p>리틀럽으로 사랑을 전해요</p>
+                    </div>
                 </div>
             </div>
         </div>

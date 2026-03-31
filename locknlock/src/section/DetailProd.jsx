@@ -6,7 +6,7 @@ import GiftIcon from '../../public/LnL_img/gift.png';
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom"
 
-// import './DetailProd.css';
+import './DetailProd.css';
 
 
 export default function DetailProd({AllData}){
@@ -24,10 +24,30 @@ export default function DetailProd({AllData}){
         else { alert("최소 주문 수량은 1개 입니다."); }
     };
 
-  
-    // 찜
-    const [likeThis, setLikeThis] = useState(false);
-    const likeFull = () => setLikeThis(prev => !prev);
+
+    // 찜목록 - localStorage 연동
+    const [likedList, setLikedList] = useState(() => {
+        const saved = localStorage.getItem('likedList');
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    // likedList 변경 시 localStorage 저장 (useEffect로 이동 — 비동기 상태 반영)
+    useEffect(() => {
+        localStorage.setItem('likedList', JSON.stringify(likedList));
+    }, [likedList]);
+
+    // 찜 추가 / 제거 토글
+    const toggleLiked = (item) => {
+        setLikedList(prev => {
+            const exists = prev.find(i => i.id === item.id);
+            if (exists) return prev.filter(i => i.id !== item.id);
+            else return [...prev, item];
+        });
+    };
+
+    // 현재 상품이 찜 됐는지 여부
+    const isLiked = likedList.some(i => i.id === findProd.id);
+
 
     //장바구니(카트)
     const [prodList, setProdList] = useState(() => {
@@ -116,15 +136,14 @@ export default function DetailProd({AllData}){
                     {/* 제품 코드와 좋아요 / 공유 아이콘 */}
                     <div className="DetailItemLikeLink">
                         <p className="Detail-Item-Name">{findProd.sku}</p> {/* 제품 코드 */}
-                        <button onClick={likeFull}>  {/* likeFull 버튼에 연결 */}
-                            {/* 좋아요 */}
-                            {likeThis ? '♥' : '♡'}  {/* 찜 상태 표시 */}
+                        <button onClick={() => toggleLiked(findProd)}>
+                            {isLiked ? '♥' : '♡'}  {/* 찜 상태 표시 */}
                         </button>
                         <button><img src={linkIcon} alt="linkIcon" /> {/* 공유 링크 */}</button>
                     </div>
                     <h3>{findProd.name}</h3>
                     <div className='PriceBox'>
-                        <p className="Discount">{findProd.discountRate}%</p> {/*할인가*/}
+                        <p className="discountprice">{findProd.discountRate ? `${findProd.discountRate}%` : null}</p>
                         <p className="Baseprice">{findProd.basePrice.toLocaleString('ko')}</p> {/*원가*/}
                         <p className="Baseprice">☆{findProd.rating}</p> {/*평점*/}
                         <p className="Baseprice">{findProd.reviewCount}</p> {/*리뷰*/}

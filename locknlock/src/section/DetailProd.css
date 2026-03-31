@@ -1,0 +1,22 @@
+.Datail-container{
+    margin: 40px auto;
+}
+
+.Item-contailner{ /* 왼쪽 이미지 박스 영역 */
+    display: flex;
+    background-color: aquamarine;
+}
+
+.Left-container{
+    display: flex;
+    background-color: aqua;
+}
+
+.Big-thumnail{
+    width: 500px;
+    height: 500px;
+}
+.Big-thumnail img{
+    width: 500px;
+    height: 500px;
+}

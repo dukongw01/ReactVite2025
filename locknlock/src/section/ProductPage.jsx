@@ -89,8 +89,11 @@ export default function ProductPage({AllData, cateFilter}){
                                 </div>
                                 {/* 상품정보 */}
                                 <div className="Prod-card">
-                                    <p>{item.name}</p>
-                                    <p>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원</p>
+                                    <h5>{item.name}</h5> {/* 제목 */}
+                                    <p style={{textDecoration:'line-through'}}>{item.basePrice}</p> {/* 원가 */}
+                                    <strong>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원</strong>
+                                    <p className="saleFont">{item.discountRate ? `${item.discountRate}%` : null}</p>
+                                    <span>☆{item.rating} ({item.reviewCount})</span> {/* 평점 / 리뷰 */}
                                 </div>
                             </Link>
                             <div className="Cart-Absolute"> {/* 장바구니 아이콘 */}

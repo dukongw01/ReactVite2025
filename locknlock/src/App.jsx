@@ -22,6 +22,7 @@ import Main from './section/Main';
 import ProductPage from './section/ProductPage';
 import DetailProd from './section/DetailProd';
 import Event from './section/Event';
+import Likeds from './section/Likeds';
 // 푸터
 import Footer from './footer/Footer';
 
@@ -41,9 +42,10 @@ function App() {
           <Route path='/Join' element={<Join />}/> {/* 회원가입 */}
           <Route path='/Join_personal' element={<Join_personal />}/> {/* 회원가입2 */}
           <Route path='/Join_business' element={<Join_business/>}/> {/* 회원가입3 */}
+          <Route path='/Event' element={<Event/>}/>
           <Route path='/' element={<Main AllData={AllData}/>}/>
           <Route path='/Main' element={<Main AllData={AllData}/>}/>
-          <Route path='/Event' element={<Event/>}/>
+          <Route path='/Likeds' element={<Likeds AllData={AllData} />}/>
           {/* cateFilter를 ProductPage로 전달 */}
           <Route path='/ProductPage' element={<ProductPage AllData={AllData} cateFilter={cateFilter} />}/>
           <Route path='/DetailProd/:id' element={<DetailProd AllData={AllData} />}/>

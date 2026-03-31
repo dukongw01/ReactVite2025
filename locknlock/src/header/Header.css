@@ -1,7 +1,97 @@
-.Header-container{ margin: 0; padding: 0;}
-.PPL-bar{ padding: 20px 0 0 20px; display: flex; justify-content: center; background-color: aquamarine;}
-.Header-fit{ margin: 0px; padding: 20px 40px 20px 40px; display: flex; justify-content: space-between; background-color: bisque; }
-.Header-left{}
-.Header-center{}
-.Header-right{}
-.Header-bottom{ display: flex; gap: 20px;}
+.Header-container {
+    margin: 0;
+    padding: 0;
+    position: sticky;   /* 스크롤 상단 고정 */
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+/* PPL 광고 */
+.PPL-bar {
+    padding: 15px 0 15px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #12ffb0;
+}
+
+.PPL-bar > p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+.PPL-bar > p > span {
+    font-weight: 400;
+    color: #333;
+}
+
+/* 헤더 본체 */
+.Header-fit {
+    margin: 0 auto;
+    padding: 16px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+
+/* 검색 */
+.Header-center {
+    flex: 1; /* 남은 공간 채우기 */
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #3E29FF;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.Header-center input {
+    flex: 1;
+    padding: 9px 16px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #222;
+}
+
+.Header-center input::placeholder {
+    color: #aaa;
+}
+
+.search-btn {
+    padding: 8px 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* 아이콘 */
+.Header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Header-right a {
+    display: flex;
+    align-items: center;
+}
+
+.Header-right img {
+    width: 25px;
+    height: 25px;
+}
