@@ -102,7 +102,9 @@ export default function Main({AllData}){
                                 <div className="MaincenterImg-Box">
                                     <div className="MaincenterImg-thumbnail">
                                         {/* findProd → item 으로 통일, 템플릿 리터럴 문법 수정 */}
-                                        <img src={`../LnL_img/allProductIMG/${item.thumbnail}-01.jpg`} alt={item.sku} />
+                                        <Link to={`/DetailProd/${item.id}`}>
+                                            <img src={`../LnL_img/allProductIMG/${item.thumbnail}-01.jpg`} alt={item.sku} />
+                                        </Link>
                                     </div>
                                     {/* 클릭시 상세페이지 이동 */}
                                     <Link to={`/DetailProd/${item.id}`}>
@@ -127,7 +129,9 @@ export default function Main({AllData}){
                                 <div className="MainrightImg-Box">
                                     <div className="MainrightImg-thumbnail">
                                         {/* findProd → item 으로 통일, 템플릿 리터럴 문법 수정 */}
-                                        <img src={`../LnL_img/allProductIMG/${item.thumbnail}-01.jpg`} alt={item.sku} />
+                                        <Link to={`/DetailProd/${item.id}`}>
+                                            <img src={`../LnL_img/allProductIMG/${item.thumbnail}-01.jpg`} alt={item.sku} />
+                                        </Link>
                                     </div>
                                     {/* 클릭시 상세페이지 이동 */}
                                     <Link to={`/DetailProd/${item.id}`}>

@@ -1,22 +1,303 @@
-.Datail-container{
-    margin: 40px auto;
+.Datail-container {
+    margin: 60px auto;
+    width: 1400px;
+    color: #333;
 }
 
-.Item-contailner{ /* 왼쪽 이미지 박스 영역 */
+/* 상품 영역 — 좌우 배치 */
+.Item-contailner {
     display: flex;
-    background-color: aquamarine;
+    justify-content: center;
+    gap: 60px; /* 좌우 간격 */
+    margin-bottom: 80px;
 }
 
-.Left-container{
+/* 왼쪽 이미지 영역 */
+.Left-container {
     display: flex;
-    background-color: aqua;
+    flex-direction: row-reverse; /*작은 썸넬 왼쪽으로 */
+    gap: 20px;
 }
 
-.Big-thumnail{
-    width: 500px;
-    height: 500px;
+/* 큰 이미지 */
+.Big-thumnail img {
+    width: 540px;
+    height: 640px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #f9f9f9;
 }
-.Big-thumnail img{
-    width: 500px;
-    height: 500px;
+
+/* 작은 이미지 */
+.Left-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Left-container ul li {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+/* 썸네일 선택 강조 */
+.Left-container ul li.active {
+    border-color: #3E29FF;
+}
+
+.Left-container ul li img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 오른쪽 상품 설명 */
+.Right-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 제품코드 찜 공유 */
+.DetailItemLikeLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.Detail-Item-Name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+
+.Btn-btween {
+    display: flex;
+    gap: 12px;
+}
+
+.Btn-btween button {
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    width: 35px;
+    height: 35px;
+    font-size: 22px;
+    color: #3E29FF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Btn-btween button:hover {
+    background-color: #f5f5f5;
+}
+
+/* 상품명 */
+.Right-container h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+/* 가격 박스 */
+.PriceBox {
+    display:grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.saleFont {
+    font-size: 24px;
+    font-weight: 800;
+    color: #222;
+}
+
+.discountprice {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff4d4f;
+}
+
+.Baseprice {
+    font-size: 15px;
+    color: #bbb;
+    margin-top: 4px;
+}
+
+/* 수량 */
+.ItemCount {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 25px 0 10px;
+}
+
+.MinusPlus {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    width: 120px;
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.MinusPlus button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+}
+
+.MinusPlus p {
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 총 금액 */
+.ItemTotal {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ItemTotal span {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* 구매 버튼 영역 */
+.Buy-Btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.GiftIcon{
+    background-color: transparent;
+    border: 1px solid #615e8f;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 50px;
+}
+.GiftIcon:hover{
+    background-color: #f0efff;
+}
+
+.cartbtn {
+    width:215px;
+    height: 54px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 장바구니 버튼 */
+.cartbtn:nth-of-type(2) {
+    border: 1px solid #3E29FF;
+    background-color: #fff;
+    color: #3E29FF;
+}
+
+.cartbtn:nth-of-type(2):hover {
+    background-color: #f0efff;
+}
+
+/* 바로구매 버튼 */
+.cartbtn:nth-of-type(3) {
+    border: none;
+    background-color: #3E29FF;
+    color: #fff;
+}
+
+.cartbtn:nth-of-type(3):hover {
+    background-color: #2e1edb;
+}
+
+/* 네이버/카카오 버튼 박스 */
+.naverkakao-Btn {
+    display:flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.naverkakao-Btn button {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.naverbtn { background-color: #03c75a; color: #fff; }
+.kakaobtn { background-color: #fee500; color: #3c1e1e; }
+.naverbtn:hover { background-color: #0cad55;}
+.kakaobtn:hover { background-color: #f0d90c;}
+
+/* 상세정보 */
+.Detail-Bottom-container {
+    margin-top: 50px;
+}
+
+.Detail-Bottom-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.Detail-Bottom-container ul li {
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #999;
+}
+
+/* 첫 번째 탭 강조 */
+.Detail-Bottom-container ul li:first-child {
+    color: #2e1edb;
+    border-bottom: 3px solid #2e1edb;
+}
+
+/* 상세 이미지 박스 */
+.IMG-Box {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.IMG-Box img {
+    max-width: 100%;
+    height: auto;
 }

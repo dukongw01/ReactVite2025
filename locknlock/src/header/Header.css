@@ -12,13 +12,17 @@
     padding: 15px 0 15px 0;
     display: flex;
     justify-content: center;
-    background-color: #12ffb0;
+    background-color: #1f212e;
 }
 
-.PPL-bar > p {
+.PPL-bar a {
+    text-decoration: none;
+}
+
+.PPL-bar a > p {
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -81,6 +85,7 @@
 
 /* 아이콘 */
 .Header-right {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -94,4 +99,27 @@
 .Header-right img {
     width: 25px;
     height: 25px;
+}
+
+/* 장바구니 링크 — badge 위치 기준 */
+.cart-link {
+    display: flex;
+    align-items: center;
+}
+
+/* 장바구니 숫자 배지 */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #3E29FF;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

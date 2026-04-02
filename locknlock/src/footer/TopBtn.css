@@ -1,0 +1,19 @@
+.Top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    color: #3E29FF;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.Top-btn:hover {
+    background-color: #EEEDFE;
+}

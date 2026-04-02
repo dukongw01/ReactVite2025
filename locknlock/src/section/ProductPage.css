@@ -1,0 +1,166 @@
+/* 전체 컨테이너 */
+.ProductList-container {
+    width: 1400px;
+    margin: 50px auto;
+    font-size: 15px;
+}
+
+/* 상단 타이틀 */
+.Prod-top-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3E29FF;
+    margin-bottom: 28px;
+}
+
+.Prod-top-container h2 {
+    font-size: 24px;
+    color: #26215C;
+    margin: 0;
+}
+
+.Prod-top-container h4 {
+    font-size: 15px;
+    align-items: center;
+    color: #888;
+    margin: 0;
+}
+
+/* 상품 목록 */
+.Prod-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 상품 카드 */
+.Prod-list-container ul li {
+    width: 330px;
+    position: relative; /* 띄우기 */
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Link */
+.Prod-list-container ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+
+/* 썸네일 */
+.Prod-card-IMG img {
+    width: 330px;
+    height: 300px;
+    object-fit: cover;
+    background-color: #f7f7f7;
+}
+
+/* 상품 정보 */
+.Prod-card {
+    padding: 10px 12px 14px 12px;
+}
+
+.Prod-card h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
+    white-space: nowrap; /* 한 줄 고정 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 텍스트 초과 ... 표시 */
+}
+
+.Prod-card p {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+}
+
+.Prod-card strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+}
+
+.Prod-card .saleFont {
+    font-size: 15px;
+    font-weight: bold;
+    color: tomato;
+    margin: 0;
+}
+
+.Prod-card span {
+    font-size: 13px;
+    color: #888;
+}
+
+/* 장바구니 버튼 */
+.Cart-Absolute {
+    position: absolute; /* 띄우기 */
+    top: 10px;
+    right: 10px;
+}
+
+.Cart-Absolute button {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.Cart-Absolute button:hover {
+    background-color: #EEEDFE;
+    border-color: #AFA9EC;
+}
+
+.Cart-Absolute button img {
+    width: 18px;
+    height: 18px;
+}
+
+/* 페이지 버튼 */
+.Prod-Page-Btn {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 40px;
+}
+
+.Prod-Page-Btn button {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #EEEDFE;
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Prod-Page-Btn button:hover {
+    background-color: #EEEDFE;
+    font-weight: bold;
+    color: 333;
+}
+
+.Prod-Page-Btn button.active {
+    background-color: #EEEDFE;
+    color: #2e1edb;
+    border-color: #3E29FF;
+    font-weight: bold;
+}

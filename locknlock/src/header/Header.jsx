@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Logo from '../../public/LnL_img/Logo.png';
 import search from '../../public/LnL_img/search.png';
@@ -12,12 +12,40 @@ import Navbar from "../navigation/Navbar";
 
 export default function Header({setCateFilter}){
 
+    const [cartCount, setCartCount] = useState(0);
+
+    const updateCartCount = () => { {/* 장바구니에 담긴 상품의 숫자 */}
+        // 웹 로컬스토리지에 담긴 아이템 목록 저장
+        const saved = localStorage.getItem('prodList'); {/* cartList → prodList 키 통일 */}
+        if (saved) {
+            const cartList = JSON.parse(saved); {/* JSON 문자열을 JavaScript 배열로 복원 */}
+            // reduce() — 장바구니 전체 수량 합산
+            // Number(item.count) || 0 — item.count가 문자열일 경우 숫자로 변환
+            const total = cartList.reduce((sum, item) => sum + (Number(item.count) || 0), 0);
+            setCartCount(total);
+        } else {
+            setCartCount(0);
+        }
+    };
+
+    useEffect(() => {
+        updateCartCount(); {/* 초기 로드 시 실행 */}
+        // 커스텀 이벤트 및 스토리지 이벤트 리스너 등록
+        // addEventListener — 하나의 이벤트에 여러 함수 연결 가능, 앞 코드를 덮어쓰지 않음
+        window.addEventListener('cartUpdate', updateCartCount);
+        window.addEventListener('storage', updateCartCount);
+        return () => { {/* 클린업 — 컴포넌트 언마운트 시 리스너 제거 */}
+            window.removeEventListener('cartUpdate', updateCartCount);
+            window.removeEventListener('storage', updateCartCount);
+        };
+    }, []);
+
 
     return(
         <div className="Header-container">
             {/* PPL 광고 바 */}
             <div className='PPL-bar'>
-                <p>공식몰 회원 전용 | <span>웰컴쿠폰·추가할인쿠폰·사은품 보러가기　＞</span></p>
+                <Link to='/Login'><p>공식몰 회원 전용 | <span>웰컴쿠폰·추가할인쿠폰·사은품 보러가기　＞</span></p></Link>
             </div>
 
             <div className="Header-fit">
@@ -38,7 +66,10 @@ export default function Header({setCateFilter}){
                 <div className='Header-right'>
                     <Link to='/Login'><img src={user} alt="마이페이지" /></Link>
                     <Link to='/Likeds'><img src={like} alt="찜목록" /></Link>
-                    <Link to='/Cart'><img src={cart} alt="장바구니" /></Link>
+                    <Link to='/Cart'>
+                        <img src={cart} alt="장바구니" />
+                        {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                    </Link>
                 </div>
             </div>
 

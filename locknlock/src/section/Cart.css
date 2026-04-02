@@ -1,0 +1,221 @@
+.cart-container {
+    width: 1400px;
+    margin: 50px auto;
+    padding: 0px;
+    color: #333333;
+}
+
+/* 타이틀 */
+.cart-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #26215C;
+    padding-bottom: 15px;
+    margin: 0px 0px 30px 0px;
+}
+
+/* 상단 버튼 */
+.cart-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.cart-controls .ch-btn, 
+.cart-controls .de-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    color: #666666;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* 테이블 레이아웃 */
+.table-box {
+    width: 1400px;
+    margin-bottom: 40px;
+}
+
+.table-box table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #333333;
+}
+
+
+.table-box thead th {
+    height: 50px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #666666;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 바디 셀 */
+.table-box tbody td {
+    padding: 20px 0px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.td-name{
+    font-weight: bold;
+}
+
+.td-price > strong{ /* 할인 퍼센트 */
+    color: tomato;
+}
+
+.table-box tbody td.cell-check { text-align: left; padding-left: 20px; }
+.table-box tbody td.cell-name { text-align: left; font-weight: 500;  }
+.table-box tbody td.cell-price { font-weight: 700; color: #333333; }
+
+.table-box tbody td img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eeeeee;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+/* 수량 조절 박스 */
+.count-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.count-control button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.count-control span {
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 총 금액 */
+.total-section {
+    width: 1400px;
+    height: 100px;
+    background-color: #f8f9ff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 40px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.total-section h4 {
+    font-size: 18px;
+    color: #555555;
+    margin-right: 20px;
+}
+
+.total-section h3 {
+    font-size: 32px;
+    color: #3E29FF;
+    font-weight: 800;
+}
+
+/* 주문 및 결제 버튼 */
+.order-action-area {
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.total-buy-btn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 회원 주문 버튼 강조 */
+.tt-b-btn01, .tt-b-btn02 {
+    width: 250px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tt-b-btn01 {
+    border: 1px solid #3E29FF;
+    background-color: #ffffff;
+    color: #3E29FF;
+}
+.tt-b-btn01:hover{
+    background-color: #eaedff;
+}
+
+.tt-b-btn02 {
+    border: none;
+    background-color: #3E29FF;
+    color: #ffffff;
+}
+.tt-b-btn02:hover{
+    background-color: #3726cf;
+}
+
+/* 비회원 */
+.pay-gateways {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 50px;
+    border-top: 1px solid #eeeeee;
+    width: 100%;
+    justify-content: center;
+}
+
+.npay-btn {
+    width: 200px;
+    height: 50px;
+    background-color: #03C75A;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.kaopay-btn {
+    width: 200px;
+    height: 50px;
+    background-color: #FEE500;
+    color: #3C1E1E;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.npay-btn:hover{
+    background-color: #10ac56;
+}
+
+ .kaopay-btn:hover{
+    background-color: #ebd515;
+}

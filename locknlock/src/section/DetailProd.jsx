@@ -48,8 +48,9 @@ export default function DetailProd({AllData}){
     // 현재 상품이 찜 됐는지 여부
     const isLiked = likedList.some(i => i.id === findProd.id);
 
-
+    
     //장바구니(카트)
+
     const [prodList, setProdList] = useState(() => {
         const listsave = localStorage.getItem('prodList');
         return listsave ? JSON.parse(listsave) : [];
@@ -109,7 +110,10 @@ export default function DetailProd({AllData}){
                 <div className="Left-container">
                     {/* 큰 썸네일 */}
                     <div className="Big-thumnail">
-                        <img src={`../LnL_img/allProductIMG/${findProd.thumbnail}-01.jpg`} alt={findProd.thumbnail} />
+                        <img
+                            src={`../LnL_img/allProductIMG/${findProd.thumbnail}-${String(miniThum).padStart(2, '0')}.jpg`}
+                            alt={findProd.thumbnail}
+                        />
                     </div>
                     {/* 작은 썸네일 */}
                     <ul>
@@ -136,17 +140,20 @@ export default function DetailProd({AllData}){
                     {/* 제품 코드와 좋아요 / 공유 아이콘 */}
                     <div className="DetailItemLikeLink">
                         <p className="Detail-Item-Name">{findProd.sku}</p> {/* 제품 코드 */}
-                        <button onClick={() => toggleLiked(findProd)}>
-                            {isLiked ? '♥' : '♡'}  {/* 찜 상태 표시 */}
-                        </button>
-                        <button><img src={linkIcon} alt="linkIcon" /> {/* 공유 링크 */}</button>
+                        <div className='Btn-btween'>
+                            <button onClick={() => toggleLiked(findProd)}>
+                                {isLiked ? '♥' : '♡'}  {/* 찜 상태 표시 */}
+                            </button>
+                            <button><img src={linkIcon} alt="linkIcon" /> {/* 공유 링크 */}</button>
+                        </div>
                     </div>
                     <h3>{findProd.name}</h3>
                     <div className='PriceBox'>
-                        <p className="discountprice">{findProd.discountRate ? `${findProd.discountRate}%` : null}</p>
-                        <p className="Baseprice">{findProd.basePrice.toLocaleString('ko')}</p> {/*원가*/}
+                        <p className="Baseprice" style={{textDecoration:'line-through'}}>{findProd.basePrice.toLocaleString('ko')}원 </p> {/*원가*/}
+                        <p className="saleFont">{(findProd.basePrice * (1 - findProd.discountRate / 100)).toLocaleString()}원 </p> {/*할인가*/}
+                        <p className="discountprice">{findProd.discountRate ? `${findProd.discountRate}%` : null}</p> {/* 퍼센트 */}
                         <p className="Baseprice">☆{findProd.rating}</p> {/*평점*/}
-                        <p className="Baseprice">{findProd.reviewCount}</p> {/*리뷰*/}
+                        <p className="Baseprice">({findProd.reviewCount})</p> {/*리뷰*/}
                     </div>
                     <p className='ItemCount'>수량:</p>
                     <div className='MinusPlus'> {/* 수량 버튼 영역 */}
@@ -154,7 +161,7 @@ export default function DetailProd({AllData}){
                         <p>{itemCount}</p>
                         <button onClick={plusBtn}>+</button>
                     </div>
-                    <p>배송비: {(totalRate >= 50000 ? 0 : 3000).toLocaleString('ko')}원</p>
+                    <p>배송비: {(totalRate >= 50000 ? 0 : 3000).toLocaleString('ko')}원 (5만원 이상 무료)</p>
                     <p className='ItemTotal'><span>총 상품금액: </span>{totalRate.toLocaleString('ko')}원</p> {/* 총금액 */}
                     <div className='Buy-Btn'>
                         <button className='GiftIcon'><img src={GiftIcon} alt="GiftIcon" /></button>
@@ -172,7 +179,7 @@ export default function DetailProd({AllData}){
             <div className='Detail-Bottom-container'>
                 <ul>
                     <li>상품상세정보</li>
-                    <li>상품후기 {findProd.reviewCount}</li>
+                    <li>상품후기 ({findProd.reviewCount})</li>
                     <li>상품문의</li>
                 </ul>
                 {/* 상품상세페이지 이미지 영역 */}

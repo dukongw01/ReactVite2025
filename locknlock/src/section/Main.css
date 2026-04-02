@@ -15,7 +15,7 @@
 
 /* (1) 슬라이드 */
 .Main-slide {
-    width: 580px;
+    width: 550px;
     position: sticky;
     top: 80px;
 }
@@ -31,10 +31,11 @@
 }
 
 .Main-slide ul li img {
-    width: 580px;
-    height: 700px;
+    width: 500px;
+    height: 600px;
     object-fit: cover;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 /* 이전 / 다음 버튼 */
@@ -53,7 +54,7 @@
 }
 
 .Main-slide-btn .prevBtn { left: 10px; }
-.Main-slide-btn .nextBtn { right: 10px; }
+.Main-slide-btn .nextBtn { right: 60px; }
 
 .Main-slide-btn .prevBtn:hover,
 .Main-slide-btn .nextBtn:hover {
@@ -64,6 +65,7 @@
 .Main-slide-number {
     display: flex;
     align-items: center;
+    width: 500px;
     gap: 8px;
     margin-top: 12px;
     justify-content: center;
@@ -234,6 +236,7 @@
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid #f0f0f0;
+    cursor: pointer;
 }
 
 .Main-bottom > div h4 {
@@ -241,10 +244,12 @@
     font-weight: 600;
     margin: 10px 0 4px 0;
     color: #222;
+    cursor: pointer;
 }
 
 .Main-bottom > div p {
     font-size: 20px;
     color: #888;
     margin: 0;
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-/* 찜목록 전체 컨테이너 */
+
 .Liked-container {
     width: 1200px;
     margin: 60px auto;
@@ -37,8 +37,7 @@
 }
 
 .Liked-top button:hover {
-    background-color: #EEEDFE;
-    color: #3E29FF;
+    background-color: #e0e0e0;
 }
 
 /* 찜목록 없을 때 */
@@ -61,12 +60,12 @@
 
 /* 상품 카드 */
 .Liked-card {
-    position: relative;
     width: 260px;
     border: 1px solid #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
+    position: relative;
 }
 
 /* 카드 내부 Link */
@@ -109,24 +108,46 @@
 }
 
 
+.Cart-nonabsol > button { /* 장바구니 버튼 */
+    width: 260px;
+    height: 30px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background-color: transparent;
+}
+.Cart-nonabsol > button img{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+
+.Cart-nonabsol > button:hover{
+    background-color: #EEEDFE;
+    color: #3E29FF;
+}
+
+
 
 /* 찜 해제 버튼 */
-.Liked-card button {
+.cancel-like{
     position: absolute;
     top: 5px;
     right: 5px;
+}
+.cancel-like > button {
     outline: none;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.Liked-card button > img {
+.cancel-like > button > img {
     width: 25px;
     height: 25px;
     background-color: transparent;
 }
 
-.Liked-card button:hover {
+.cancel-like > button:hover {
+    padding: 1px 0 0 0;
     color: #333;
 }

@@ -23,8 +23,11 @@ import ProductPage from './section/ProductPage';
 import DetailProd from './section/DetailProd';
 import Event from './section/Event';
 import Likeds from './section/Likeds';
+import Cart from './section/Cart';
 // 푸터
 import Footer from './footer/Footer';
+import TopBtn from './footer/TopBtn';
+
 
 
 function App() {
@@ -45,12 +48,14 @@ function App() {
           <Route path='/Event' element={<Event/>}/>
           <Route path='/' element={<Main AllData={AllData}/>}/>
           <Route path='/Main' element={<Main AllData={AllData}/>}/>
-          <Route path='/Likeds' element={<Likeds AllData={AllData} />}/>
+          <Route path='/Likeds' element={<Likeds AllData={AllData} cateFilter={cateFilter} />}/>
+          <Route path='/Cart' element={<Cart AllData={AllData} cateFilter={cateFilter} />}/>
           {/* cateFilter를 ProductPage로 전달 */}
           <Route path='/ProductPage' element={<ProductPage AllData={AllData} cateFilter={cateFilter} />}/>
           <Route path='/DetailProd/:id' element={<DetailProd AllData={AllData} />}/>
       </Routes>
       <Footer/>
+      <TopBtn/>
     </BrowserRouter>
     </>
   )

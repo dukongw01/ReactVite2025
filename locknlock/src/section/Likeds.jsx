@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import cancelBtn from '../../public/LnL_img/cancel.png'; 
+import cart from '../../public/LnL_img/cart.png';
 
 import './Likeds.css';
 
-export default function Likeds({AllData}){
+export default function Likeds(){
 
+    
 
     // 찜목록 - localStorage 연동
     const [likedList, setLikedList] = useState(() => {
@@ -35,8 +37,33 @@ export default function Likeds({AllData}){
         }
     };
 
-    // 찜목록 표시 토글
-    const [showLiked, setShowLiked] = useState(true);
+    // 장바구니 - localStorage 연동
+    const [prodList, setProdList] = useState(() => {
+        const listsave = localStorage.getItem('prodList');
+        return listsave ? JSON.parse(listsave) : [];
+    });
+
+    // 장바구니 목록 - 상태 변동 저장
+    useEffect(() => {
+        localStorage.setItem('prodList', JSON.stringify(prodList));
+        window.dispatchEvent(new Event('prodListUpdate'));
+    }, [prodList]);
+
+    // 장바구니 버튼 클릭 핸들러
+    const cartHandle = (item) => {
+        setProdList(prevCart => {
+            const findProd = prevCart.find(pItem => pItem.sku === item.sku); // id 대신 sku로 비교
+            if (!findProd) {
+                alert(`${item.name} 장바구니에 담겼습니다.`);
+                return [...prevCart, { ...item, count: 1 }];
+            } else {
+                alert(`${item.name} 수량이 1개 추가됐습니다.`);
+                return prevCart.map(pItem =>
+                    pItem.sku === item.sku ? { ...pItem, count: pItem.count + 1 } : pItem
+                );
+            }
+        });
+    };
 
 
 
@@ -47,15 +74,11 @@ export default function Likeds({AllData}){
             <div className="Liked-top">
                 <h2>♥ 찜목록 ({likedList.length})</h2>
                 <div>
-                    <button onClick={() => setShowLiked(prev => !prev)}>
-                        {showLiked ? '목록 숨기기' : '목록 보기'}
-                    </button>
                     <button onClick={clearLiked}>전체 삭제</button>
                 </div>
             </div>
 
             {/* 찜목록 */}
-            {showLiked && (
                 <ul className="Liked-list">
                     {likedList.length === 0
                         ? <p className="Liked-empty">찜한 상품이 없습니다.</p>
@@ -72,13 +95,20 @@ export default function Likeds({AllData}){
                                         <strong>{item.discountRate ? `${item.discountRate}%` : null}</strong>
                                     </p>
                                 </Link>
+                                {/* 장바구니 아이콘 */}
+                                <div className="Cart-nonabsol">
+                                    <button onClick={() => cartHandle(item)}>
+                                        <img src={cart} alt="cart.png" />
+                                    </button>
+                                </div>
                                 {/* 찜 제거 버튼 */}
-                                <button onClick={() => toggleLiked(item)}><img src={cancelBtn} alt="cancelBtn"></img></button>
+                                <div className="cancel-like">
+                                    <button onClick={() => toggleLiked(item)}><img src={cancelBtn} alt="cancelBtn"></img></button>
+                                </div>
                             </li>
                         ))
                     }
                 </ul>
-            )}
         </div>
 
     )

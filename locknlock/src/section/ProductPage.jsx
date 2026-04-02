@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import cart from '../../public/LnL_img/cart.png';
 
+import './ProductPage.css'
+
 
 
 export default function ProductPage({AllData, cateFilter}){
@@ -17,6 +19,7 @@ export default function ProductPage({AllData, cateFilter}){
     };
 
     //장바구니(카트)
+
     const [prodList, setProdList] = useState(()=>{
         const listsave = localStorage.getItem('prodList');
         return listsave ? JSON.parse(listsave):[];
@@ -91,8 +94,10 @@ export default function ProductPage({AllData, cateFilter}){
                                 <div className="Prod-card">
                                     <h5>{item.name}</h5> {/* 제목 */}
                                     <p style={{textDecoration:'line-through'}}>{item.basePrice}</p> {/* 원가 */}
-                                    <strong>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원</strong>
-                                    <p className="saleFont">{item.discountRate ? `${item.discountRate}%` : null}</p>
+                                    <p className="saleFont"> {/* 할인가 */}
+                                        <strong>{(item.basePrice * (1 - item.discountRate / 100)).toLocaleString()}원 </strong>
+                                        {item.discountRate ? `${item.discountRate}%` : null} {/* 퍼센티지 */}
+                                    </p>
                                     <span>☆{item.rating} ({item.reviewCount})</span> {/* 평점 / 리뷰 */}
                                 </div>
                             </Link>
